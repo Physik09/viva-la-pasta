@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viva la Pasta — Frisch. Schnell. Lecker.</title>
+  <meta name="description" content="Viva la Pasta — Frische Pasta to-go in Aachen. Handgemachte Pasta, regionale Zutaten, sofort genussbereit.">
+  <meta name="author" content="Viva la Pasta">
+  <meta name="theme-color" content="#7A1F2B">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.vivalapasta.de/">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Viva la Pasta">
+  <meta property="og:title" content="Viva la Pasta — Frisch. Schnell. Lecker.">
+  <meta property="og:description" content="Handgemachte Pasta to-go in Aachen. Frische Zutaten, sofort genussbereit.">
+  <meta property="og:url" content="https://www.vivalapasta.de/">
+  <meta property="og:image" content="https://www.vivalapasta.de/images/gallery-1.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Viva la Pasta — Frisch. Schnell. Lecker.">
+  <meta name="twitter:description" content="Handgemachte Pasta to-go in Aachen. Frische Zutaten, sofort genussbereit.">
+  <meta name="twitter:image" content="https://www.vivalapasta.de/images/gallery-1.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1F2B'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23C9A96E' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+       ============================================================ */
+    :root {
+      --burgundy: #7A1F2B;
+      --burgundy-light: #9A3544;
+      --burgundy-dark: #5E1720;
+      --gold: #C9A96E;
+      --gold-light: #D4BC8A;
+      --gold-dark: #B89555;
+      --cream: #FAF6F0;
+      --cream-dark: #EDE8E0;
+      --warm-dark: #2C2420;
+      --warm-mid: #5C4D44;
+      --white: #FFFFFF;
+      --shadow-sm: 0 2px 8px rgba(44, 36, 32, 0.08);
+      --shadow-md: 0 4px 20px rgba(44, 36, 32, 0.12);
+      --shadow-lg: 0 8px 40px rgba(44, 36, 32, 0.16);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --max-width: 1200px;
+      --section-padding: 100px 0;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--warm-dark);
+      background-color: var(--cream);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition);
+    }
+
+    ul { list-style: none; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* ============================================================
+       UTILITY CLASSES
+       ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--warm-dark);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--warm-mid);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       SUBTLE LINEN TEXTURE
+       ============================================================ */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ============================================================
+       NAVIGATION
+       ============================================================ */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: color var(--transition);
+    }
+
+    .navbar.scrolled .nav-logo { color: var(--warm-dark); }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .navbar.scrolled .nav-links a { color: var(--warm-mid); }
+    .navbar.scrolled .nav-links a:hover { color: var(--burgundy); }
+    .navbar.scrolled .nav-links a::after { background: var(--burgundy); }
+
+    .nav-cta {
+      background: var(--burgundy) !important;
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--burgundy-light) !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta::after { display: none !important; }
+    .navbar.scrolled .nav-cta { color: var(--white) !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .navbar.scrolled .hamburger span { background: var(--warm-dark); }
+
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--warm-dark) 0%, var(--burgundy-dark) 50%, var(--burgundy) 100%);
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44, 36, 32, 0.45) 0%,
+        rgba(44, 36, 32, 0.25) 50%,
+        rgba(44, 36, 32, 0.65) 100%
+      );
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 720px;
+      padding: 0 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      background: rgba(201, 169, 110, 0.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.05;
+    }
+
+    .hero h1 span { color: var(--gold); font-style: italic; }
+
+    .hero-tagline {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 40px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(122, 31, 43, 0.35);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bobble 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator .arrow {
+      width: 1px; height: 30px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.45), transparent);
+    }
+
+    @keyframes bobble {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============================================================
+       BUILD-YOUR-BOWL SECTION (Konzept)
+       ============================================================ */
+    .bowl {
+      padding: var(--section-padding);
+      background: var(--cream);
+    }
+
+    .bowl-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .bowl-header .section-subtitle { margin: 0 auto; }
+
+    .bowl-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 640px) {
+      .bowl-steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    }
+
+    .bowl-step {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+
+    .bowl-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bowl-step-number {
+      width: 48px; height: 48px;
+      background: var(--burgundy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+
+    .bowl-step h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .bowl-step p {
+      font-size: 0.9rem;
+      color: var(--warm-mid);
+      line-height: 1.6;
+    }
+
+    .bowl-step::after {
+      content: '→';
+      position: absolute;
+      right: -20px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .bowl-step:last-child::after { display: none; }
+
+    @media (max-width: 639px) {
+      .bowl-step::after {
+        right: 50%; top: auto; bottom: -18px;
+        transform: translateX(50%) rotate(90deg);
+      }
+    }
+
+    /* Pasta Icons Grid */
+    .pasta-icons-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+      margin-bottom: 24px;
+    }
+
+    .pasta-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .pasta-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform var(--transition);
+    }
+
+    .pasta-icon:hover { transform: translateY(-4px); }
+
+    .pasta-icon svg {
+      width: 72px; height: 72px;
+    }
+
+    .pasta-icon-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--warm-mid);
+      letter-spacing: 0.5px;
+    }
+
+    /* ============================================================
+       MENU SECTION (Speisekarte)
+       ============================================================ */
+    .menu {
+      padding: var(--section-padding);
+      background: var(--cream-dark);
+    }
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .menu-header .section-subtitle { margin: 0 auto; }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .menu-tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: 1px solid var(--cream);
+      background: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--warm-mid);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .menu-tab:hover { border-color: var(--burgundy); color: var(--burgundy); }
+
+    .menu-tab.active {
+      background: var(--burgundy);
+      color: var(--white);
+      border-color: var(--burgundy);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .menu-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid transparent;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(122, 31, 43, 0.08);
+    }
+
+    .menu-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .menu-card h3 { font-size: 1.15rem; font-weight: 600; }
+
+    .menu-card-price {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--burgundy);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .menu-card-desc {
+      font-size: 0.9rem;
+      color: var(--warm-mid);
+      line-height: 1.6;
+    }
+
+    .menu-card-shape {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-top: 2px;
+    }
+
+    .menu-card-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .menu-card-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+
+    .menu-card-tag.spicy { background: #FEE2E2; color: #B91C1C; }
+    .menu-card-tag.signature { background: rgba(122, 31, 43, 0.1); color: var(--burgundy); }
+    .menu-card-tag.vegetarian { background: rgba(74, 93, 58, 0.1); color: #4A5D3A; }
+    .menu-card-tag.extra { background: rgba(201, 169, 110, 0.15); color: var(--gold-dark); }
+
+    .menu-panel { display: none; }
+    .menu-panel.active { display: grid; }
+
+    .allergen-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--gold);
+    }
+
+    .allergen-note p {
+      font-size: 0.8rem;
+      color: var(--warm-mid);
+      line-height: 1.7;
+    }
+
+    .allergen-note strong { color: var(--warm-dark); }
+
+    /* ============================================================
+       GALLERY SECTION
+       ============================================================ */
+    .gallery {
+      padding: var(--section-padding);
+      background: var(--cream);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .gallery-header .section-subtitle { margin: 0 auto; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--transition);
+    }
+
+    .gallery-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-photo { transform: scale(1.05); }
+
+    /* ============================================================
+       LOCATION SECTION (Standort)
+       ============================================================ */
+    .location {
+      padding: var(--section-padding);
+      background: var(--cream-dark);
+    }
+
+    .location-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .location-header .section-subtitle { margin: 0 auto; }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .location-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .location-map {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      min-height: 320px;
+      height: 100%;
+      display: flex;
+      align-items: center; justify-content: center;
+    }
+
+    .location-map iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .location-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .location-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .location-card h3 .icon {
+      width: 32px; height: 32px;
+      background: rgba(122, 31, 43, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .location-text {
+      font-size: 0.95rem;
+      color: var(--warm-mid);
+      line-height: 1.8;
+    }
+
+    .location-text a {
+      color: var(--burgundy);
+      font-weight: 500;
+    }
+
+    .location-text a:hover { color: var(--burgundy-light); }
+
+    /* ============================================================
+       ORDER / CONTACT SECTION (Kontakt)
+       ============================================================ */
+    .order {
+      padding: var(--section-padding);
+      background: var(--cream);
+    }
+
+    .order-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .order-header .section-subtitle { margin: 0 auto; }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .order-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+    }
+
+    .order-form-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .order-form-wrapper h3 {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--warm-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--warm-dark);
+      background: var(--cream);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 3px rgba(122, 31, 43, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn-primary {
+      width: 100%;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success.show { display: block; }
+
+    .form-success .check-icon {
+      width: 64px; height: 64px;
+      background: rgba(74, 93, 58, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+
+    .form-success h3 { font-size: 1.5rem; margin-bottom: 8px; }
+    .form-success p { color: var(--warm-mid); font-size: 0.95rem; }
+
+    /* Delivery / Order Options */
+    .order-options {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .order-options h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .order-options-subtitle {
+      font-size: 0.9rem;
+      color: var(--warm-mid);
+      margin-bottom: 8px;
+    }
+
+    .order-phone {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 24px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .order-phone .phone-icon {
+      width: 44px; height: 44px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .order-phone-text strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .order-phone-text span {
+      font-size: 0.85rem;
+      color: var(--warm-mid);
+    }
+
+    .delivery-apps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .delivery-apps-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+    }
+
+    .delivery-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+    }
+
+    .delivery-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .delivery-btn.lieferando { background: #E84D1A; }
+    .delivery-btn.wolt { background: #00C8FF; color: var(--warm-dark); }
+    .delivery-btn.ubereats { background: #06C167; }
+
+    .delivery-btn .app-icon {
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .delivery-btn.wolt .app-icon { background: rgba(0,0,0,0.08); }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--warm-dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 64px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+    }
+
+    .footer-brand .nav-logo {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      max-width: 320px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 600;
+      color: rgba(255, 255, 255, 0.55);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--burgundy);
+      color: var(--white);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.45);
+      padding: 6px 0;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-legal-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+
+    .footer-legal-links a:hover { color: var(--gold); }
+
+    .footer-joke {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 0.8rem;
+    }
+
+    .footer-allergen {
+      margin-top: 16px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-sm);
+      border-left: 2px solid var(--gold-dark);
+    }
+
+    .footer-allergen p {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.6;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity var(--transition);
+    }
+
+    .back-to-top:hover { opacity: 0.7; }
+
+    /* ============================================================
+       LEGAL SECTIONS (Impressum & Datenschutz)
+       ============================================================ */
+    .legal-section {
+      padding: 120px 0 80px;
+      background: var(--cream);
+      scroll-margin-top: 80px;
+    }
+
+    .legal-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+
+    .legal-section .legal-updated {
+      font-size: 0.8rem;
+      color: var(--warm-mid);
+      margin-bottom: 32px;
+    }
+
+    .legal-block {
+      margin-bottom: 32px;
+    }
+
+    .legal-block h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+
+    .legal-block p,
+    .legal-block li {
+      font-size: 0.92rem;
+      color: var(--warm-mid);
+      line-height: 1.7;
+    }
+
+    .legal-block ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .legal-block a { color: var(--burgundy); font-weight: 500; }
+    .legal-block a:hover { color: var(--burgundy-light); }
+
+    /* ============================================================
+       MOBILE RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      :root { --section-padding: 72px 0; }
+
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 280px; height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        padding: 100px 32px 32px;
+        gap: 24px;
+        box-shadow: var(--shadow-lg);
+        transition: right var(--transition);
+        z-index: 1000;
+      }
+
+      .nav-links.open { right: 0; }
+      .nav-links a { color: var(--warm-dark) !important; font-size: 1rem; }
+      .nav-cta { margin-top: 12px; }
+      .hamburger { display: flex; }
+
+      .mobile-overlay {
+        position: fixed; inset: 0;
+        background: rgba(44, 36, 32, 0.5);
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+      }
+
+      .mobile-overlay.open { opacity: 1; pointer-events: all; }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-buttons a,
+      .hero-buttons button {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+      }
+
+      .order-form-wrapper { padding: 24px 20px; }
+    }
+
+    @media print {
+      .navbar, .hero-overlay, .scroll-indicator, .hamburger { display: none; }
+      .hero { min-height: auto; padding: 40px 0; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Viva la Pasta",
+    "servesCuisine": ["Pasta", "Italienisch"],
+    "image": "https://www.vivalapasta.de/images/gallery-1.jpg",
+    "priceRange": "€",
+    "url": "https://www.vivalapasta.de/",
+    "telephone": "+49 241 123 456 78",
+    "email": "ciao@vivalapasta.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bahnhofstraße 9",
+      "postalCode": "52064",
+      "addressLocality": "Aachen",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "12:00",
+      "closes": "22:00"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7677,
+      "longitude": 6.0918
+    },
+    "acceptsReservations": "False"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ==================== MOBILE OVERLAY ==================== -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Hauptnavigation">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Viva la <span>Pasta</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#konzept">Konzept</a></li>
+        <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#standort">Standort</a></li>
+        <li><a href="#kontakt" class="nav-cta">Jetzt bestellen</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content fade-in">
+        <div class="hero-badge">Aachen &middot; Handgemacht &middot; Täglich frisch</div>
+        <h1>Viva la <span>Pasta</span></h1>
+        <p class="hero-tagline">Frisch. Schnell. Lecker.</p>
+        <p class="hero-sub">
+          Handgemachte Pasta, regionale Zutaten und jede Menge Leidenschaft —
+          schnell und frisch, genau wie du es brauchst.
+        </p>
+        <div class="hero-buttons">
+          <a href="#kontakt" class="btn-primary">Jetzt bestellen</a>
+          <a href="#speisekarte" class="btn-secondary">Speisekarte ansehen</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="arrow"></div>
+      </div>
+    </section>
+
+    <!-- ==================== BUILD-YOUR-BOWL (Konzept) ==================== -->
+    <section class="bowl" id="konzept">
+      <div class="container">
+        <div class="bowl-header fade-in">
+          <span class="section-label">So funktioniert's</span>
+          <h2 class="section-title">Dein Perfekter Teller</h2>
+          <p class="section-subtitle">
+            Drei einfache Schritte zu deiner Lieblingspasta — schnell, frisch und genau nach deinem Geschmack.
+          </p>
+        </div>
+
+        <!-- 3-Step Process -->
+        <div class="bowl-steps">
+          <div class="bowl-step fade-in">
+            <div class="bowl-step-number">1</div>
+            <h3>Wähle deine Pasta</h3>
+            <p>Spaghetti, Penne, Fusilli und mehr — jede Shape mit eigenem Charakter.</p>
+          </div>
+          <div class="bowl-step fade-in">
+            <div class="bowl-step-number">2</div>
+            <h3>Wähle deine Sauce</h3>
+            <p>Von klassischer Bolognese bis scharfer Arrabbiata — für jeden Geschmack.</p>
+          </div>
+          <div class="bowl-step fade-in">
+            <div class="bowl-step-number">3</div>
+            <h3>Wähle dein Topping</h3>
+            <p>Parmesan, Hähnchen, Garnelen oder Trüffelöl — mach es zu deinem Teller.</p>
+          </div>
+        </div>
+
+        <!-- Pasta Shape Icons -->
+        <p class="pasta-icons-label fade-in">Unsere Pasta-Formen</p>
+        <div class="pasta-icons fade-in">
+
+          <!-- Spaghetti -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+              <path d="M20 14c2 8-4 16 0 24s-4 16 0 24c4 8-2 16 2 22"/>
+              <path d="M32 10c-1 10 3 18 0 28s3 16 0 24c-3 10 1 18-1 24"/>
+              <path d="M44 12c1 8-3 18 1 26s-3 16 1 26c4 8-1 14 0 18"/>
+              <path d="M56 14c-2 8 4 16 0 24s4 16 0 24c-4 8 2 16-2 22"/>
+              <path d="M66 10c1 10-3 18 0 28s3 16 0 24"/>
+            </svg>
+            <span class="pasta-icon-name">Spaghetti</span>
+          </div>
+
+          <!-- Fettuccine -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2.5" stroke-linecap="round">
+              <path d="M16 16c8 4 16-2 24 2s16 6 24 2"/>
+              <path d="M14 30c10 4 18-2 26 2s14 6 26 2"/>
+              <path d="M16 44c8 4 16-2 24 2s16 6 24 2"/>
+              <path d="M14 58c10 4 18-2 26 2s14 6 26 2"/>
+            </svg>
+            <span class="pasta-icon-name">Fettuccine</span>
+          </div>
+
+          <!-- Tagliatelle -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round">
+              <path d="M14 18c6 3 14-2 22 1s14 5 22 2c6-2 10 1 12 3"/>
+              <path d="M12 34c8 3 16-2 24 1s12 5 24 2"/>
+              <path d="M14 50c6 3 14-2 22 1s14 5 22 2"/>
+              <path d="M16 64c4 2 10-1 16 1s10 3 16 1"/>
+            </svg>
+            <span class="pasta-icon-name">Tagliatelle</span>
+          </div>
+
+          <!-- Fusilli -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+              <path d="M24 10c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 6 8 12"/>
+              <path d="M42 12c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 4 8 10"/>
+              <path d="M60 10c0 6 6 6 6 12s-6 6-6 12 6 6 6 12-6 6-6 12 6 6 6 12"/>
+            </svg>
+            <span class="pasta-icon-name">Fusilli</span>
+          </div>
+
+          <!-- Penne -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 18l8-6 24 0 8 6"/>
+              <path d="M20 18l0 50 8 6"/>
+              <path d="M60 18l0 50-8 6"/>
+              <path d="M20 32h40"/>
+              <path d="M20 46h40"/>
+              <path d="M28 12l24 0"/>
+            </svg>
+            <span class="pasta-icon-name">Penne</span>
+          </div>
+
+          <!-- Rigatoni -->
+          <div class="pasta-icon">
+            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+              <rect x="22" y="12" width="36" height="56" rx="3"/>
+              <line x1="28" y1="12" x2="28" y2="68"/>
+              <line x1="34" y1="12" x2="34" y2="68"/>
+              <line x1="40" y1="12" x2="40" y2="68"/>
+              <line x1="46" y1="12" x2="46" y2="68"/>
+              <line x1="52" y1="12" x2="52" y2="68"/>
+            </svg>
+            <span class="pasta-icon-name">Rigatoni</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MENU (Speisekarte) ==================== -->
+    <section class="menu" id="speisekarte">
+      <div class="container">
+        <div class="menu-header fade-in">
+          <span class="section-label">Speisekarte</span>
+          <h2 class="section-title">Auf den Punkt gebracht</h2>
+          <p class="section-subtitle">
+            Frische Pasta, charmante Saucen und die besten Toppings — schnell gemacht, mit Liebe genossen.
+          </p>
+        </div>
+
+        <div class="menu-tabs fade-in" role="tablist" aria-label="Speisekarte Kategorien">
+          <button class="menu-tab active" data-tab="pasta" role="tab" aria-selected="true">Pasta</button>
+          <button class="menu-tab" data-tab="toppings" role="tab" aria-selected="false">Toppings</button>
+          <button class="menu-tab" data-tab="insalate" role="tab" aria-selected="false">Insalate</button>
+          <button class="menu-tab" data-tab="getraenke" role="tab" aria-selected="false">Getränke</button>
+        </div>
+
+        <!-- ==================== PASTA ==================== -->
+        <div class="menu-panel active" id="panel-pasta" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Bolognese</h3>
+                <span class="menu-card-price">&euro;11</span>
+              </div>
+              <p class="menu-card-desc">Klassisches Hackfleischragout, langsam geschmort mit Tomaten und Gemüse.</p>
+              <p class="menu-card-shape">mit Tagliatelle</p>
+              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Arrabbiata</h3>
+                <span class="menu-card-price">&euro;8</span>
+              </div>
+              <p class="menu-card-desc">Scharfe Tomatensauce mit Chili und Knoblauch — für alle, die es pikant mögen.</p>
+              <p class="menu-card-shape">mit Penne</p>
+              <div class="menu-card-tags"><span class="menu-card-tag spicy">Scharf</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Aglio e Olio</h3>
+                <span class="menu-card-price">&euro;8</span>
+              </div>
+              <p class="menu-card-desc">Knoblauch und Olivenöl — simpel, perfekt, ein Klassiker aus Neapel.</p>
+              <p class="menu-card-shape">mit Spaghetti</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Alfredo</h3>
+                <span class="menu-card-price">&euro;8</span>
+              </div>
+              <p class="menu-card-desc">Cremige Käsesauce mit Parmesan und Butter — urig und Seele wärmend.</p>
+              <p class="menu-card-shape">mit Fettuccine</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Pomodoro</h3>
+                <span class="menu-card-price">&euro;8</span>
+              </div>
+              <p class="menu-card-desc">Klassische Tomatensauce mit frischem Basilikum — die Essenz Italiens.</p>
+              <p class="menu-card-shape">mit Spaghetti</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Tonno</h3>
+                <span class="menu-card-price">&euro;11</span>
+              </div>
+              <p class="menu-card-desc">Thunfischsauce mit Kapern und Zwiebeln — mediterran und voll im Geschmack.</p>
+              <p class="menu-card-shape">mit Spaghetti</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Quattro Formaggi</h3>
+                <span class="menu-card-price">&euro;12</span>
+              </div>
+              <p class="menu-card-desc">Vier Käsesorte — Gorgonzola, Parmesan, Mozzarella und Pecorino in cremiger Sauce.</p>
+              <p class="menu-card-shape">mit Rigatoni oder Fusilli</p>
+              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Pilz &amp; Brokkoli</h3>
+                <span class="menu-card-price">&euro;10</span>
+              </div>
+              <p class="menu-card-desc">Cremige Pilz-Brokkoli-Sauce — herb, erdig und überraschend vielseitig.</p>
+              <p class="menu-card-shape">mit Fusilli</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TOPPINGS ==================== -->
+        <div class="menu-panel" id="panel-toppings" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Parmesan</h3>
+                <span class="menu-card-price">+&euro;1</span>
+              </div>
+              <p class="menu-card-desc">Frisch geriebener Parmigiano Reggiano — das i-Tüpfelchen.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Oliven</h3>
+                <span class="menu-card-price">+&euro;1</span>
+              </div>
+              <p class="menu-card-desc">Schwarze Kalamata-Oliven, mild und fruchtig.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Cherrytomaten</h3>
+                <span class="menu-card-price">+&euro;1</span>
+              </div>
+              <p class="menu-card-desc">Halbierte, frische Cherrytomaten — süß und aromatisch.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Rucola</h3>
+                <span class="menu-card-price">+&euro;1</span>
+              </div>
+              <p class="menu-card-desc">Frische Rucola-Blätter — peppig und leicht bitter.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Hähnchenbrust</h3>
+                <span class="menu-card-price">+&euro;2</span>
+              </div>
+              <p class="menu-card-desc">Gegrillte Hähnchenbrust, zart und würzig marinier.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Garnelen</h3>
+                <span class="menu-card-price">+&euro;3</span>
+              </div>
+              <p class="menu-card-desc">Königsgarnelen, kurz angeröstet mit Knoblauch und Kräutern.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Trüffelöl</h3>
+                <span class="menu-card-price">+&euro;2</span>
+              </div>
+              <p class="menu-card-desc">Echten Schwarzen Trüffel aus Umbrien — intensiv und unvergleichlich.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag extra">Premium</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Jalapeños</h3>
+                <span class="menu-card-price">+&euro;1</span>
+              </div>
+              <p class="menu-card-desc">Eingelegte Jalapeño-Scheiben — für die Kick-Liebhaber.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag spicy">Scharf</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== INSALATE ==================== -->
+        <div class="menu-panel" id="panel-insalate" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Insalata Mista</h3>
+                <span class="menu-card-price">&euro;5</span>
+              </div>
+              <p class="menu-card-desc">Gemischter Salat mit knackigem Eisbergsalat, Gurke, Tomate und Dressing nach Wahl.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Caesar Salad</h3>
+                <span class="menu-card-price">&euro;7</span>
+              </div>
+              <p class="menu-card-desc">Rucola und Römersalat mit Parmesan-Croutons, Parmesan-Späne und Caesar-Dressing.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Caprese</h3>
+                <span class="menu-card-price">&euro;7</span>
+              </div>
+              <p class="menu-card-desc">Buffalo-Mozzarella, reife Tomaten, frisches Basilikum und native Olivenöl extra.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GETRÄNKE ==================== -->
+        <div class="menu-panel" id="panel-getraenke" role="tabpanel">
+          <div class="menu-grid">
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Wasser</h3>
+                <span class="menu-card-price">&euro;2</span>
+              </div>
+              <p class="menu-card-desc">Hausbrand still oder medium, 0,5L.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Limonade</h3>
+                <span class="menu-card-price">&euro;3</span>
+              </div>
+              <p class="menu-card-desc">Hausgemachte Limonade — Zitrone, Minze oder Orange.</p>
+              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Hausgemacht</span></div>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Spezi</h3>
+                <span class="menu-card-price">&euro;3</span>
+              </div>
+              <p class="menu-card-desc">Cola und Orangenlimonade — der Klassiker.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Bier</h3>
+                <span class="menu-card-price">&euro;4</span>
+              </div>
+              <p class="menu-card-desc">Lokales Craft Bier vom Fass, 0,3L — frag nach der aktuellen Auswahl.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Weißwein</h3>
+                <span class="menu-card-price">&euro;5</span>
+              </div>
+              <p class="menu-card-desc">Riesling oder Sauvignon Blanc — ein Glas, perfekt zur Pasta.</p>
+            </div>
+            <div class="menu-card fade-in">
+              <div class="menu-card-header">
+                <h3>Rotwein</h3>
+                <span class="menu-card-price">&euro;5</span>
+              </div>
+              <p class="menu-card-desc">Montepulciano oder Sangiovese — ein Glas, vollmundig und fruchtig.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Allergen Footnote -->
+        <div class="allergen-note fade-in">
+          <p>
+            <strong>Hinweis zu Allergenen:</strong> Alle unsere Gerichte können Spuren von Nüssen, Gluten, Milch, Eiern, Soja und Sellerie enthalten.
+            Bitte informiere dich vor Ort über die vollständige Zutatenliste oder sprich unser Personal an.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="gallery" id="galerie">
+      <div class="container">
+        <div class="gallery-header fade-in">
+          <span class="section-label">Galerie</span>
+          <h2 class="section-title">Einblicke in unsere Küche</h2>
+          <p class="section-subtitle">
+            Von der Hand zum Teller — jeden Tag aufs Neue.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item fade-in">
+            <img src="images/gallery-1.jpg" alt="Handgemachte Pasta" loading="lazy" class="gallery-photo">
+          </div>
+          <div class="gallery-item fade-in">
+            <img src="images/gallery-2.jpg" alt="Bolognese im Teller" loading="lazy" class="gallery-photo">
+          </div>
+          <div class="gallery-item fade-in">
+            <img src="images/gallery-3.jpg" alt="Unser Ladenlokal" loading="lazy" class="gallery-photo">
+          </div>
+          <div class="gallery-item fade-in">
+            <img src="images/gallery-4.jpg" alt="Saucen-Variationen" loading="lazy" class="gallery-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LOCATION & HOURS ==================== -->
+    <section class="location" id="standort">
+      <div class="container">
+        <div class="location-header fade-in">
+          <span class="section-label">Standort</span>
+          <h2 class="section-title">So findest du uns</h2>
+          <p class="section-subtitle">
+            Mitten in Aachen, direkt am Bahnhof — kommt vorbei, es lohnt sich.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <div class="location-map fade-in">
+            <iframe
+              src="https://www.google.com/maps?q=Bahnhofstra%C3%9Fe+9,+52064+Aachen,+Germany&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Karte: Viva la Pasta, Bahnhofstraße 9, Aachen">
+            </iframe>
+          </div>
+
+          <div class="location-details">
+            <div class="location-card fade-in">
+              <h3><span class="icon">&#9906;</span> Adresse</h3>
+              <p class="location-text">
+                Bahnhofstraße 9<br>
+                52064 Aachen<br>
+                <a href="tel:+4924112345678">0241 123 456 78</a><br>
+                <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
+              </p>
+            </div>
+
+            <div class="location-card fade-in">
+              <h3><span class="icon">&#9713;</span> Öffnungszeiten</h3>
+              <div class="location-text" style="line-height: 2.2;">
+                <strong>Täglich:</strong> 12:00 – 22:00<br>
+                <span style="font-size: 0.85rem; color: var(--warm-mid);">Keine Ruhetage — wir sind immer für dich da.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ORDER / CONTACT ==================== -->
+    <section class="order" id="kontakt">
+      <div class="container">
+        <div class="order-header fade-in">
+          <span class="section-label">Kontakt &amp; Bestellung</span>
+          <h2 class="section-title">Jetzt bestellen</h2>
+          <p class="section-subtitle">
+            Bestell telefonisch, über deine Lieblings-App oder schreib uns eine Nachricht.
+          </p>
+        </div>
+
+        <div class="order-grid">
+          <!-- Contact Form -->
+          <div class="order-form-wrapper fade-in">
+            <h3>Schreib uns</h3>
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <div class="form-group">
+                <label for="contactName">Name *</label>
+                <input type="text" id="contactName" name="name" required placeholder="Dein Name">
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">E-Mail *</label>
+                <input type="email" id="contactEmail" name="email" required placeholder="deine@email.de">
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Nachricht *</label>
+                <textarea id="contactMessage" name="message" required placeholder="Deine Bestellung oder Frage..."></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="Neue Nachricht über die Website">
+              <div class="form-submit">
+                <button type="submit" class="btn-primary">Nachricht senden</button>
+              </div>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <div class="check-icon">&#10003;</div>
+              <h3>Grazie!</h3>
+              <p>Deine Nachricht wurde gesendet. Wir melden uns schnellstmöglich bei dir!</p>
+            </div>
+          </div>
+
+          <!-- Order Options -->
+          <div class="order-options fade-in">
+            <div>
+              <h3>So bestellst du</h3>
+              <p class="order-options-subtitle">Wähle deinen Weg — wir kümmern uns um den Rest.</p>
+            </div>
+
+            <div class="order-phone">
+              <div class="phone-icon">&#9743;</div>
+              <div class="order-phone-text">
+                <strong>Ruf uns an</strong>
+                <span>0241 123 456 78</span>
+              </div>
+            </div>
+
+            <div class="delivery-apps">
+              <span class="delivery-apps-label">Oder bestell online</span>
+              <a href="https://www.lieferando.de/suche?q=viva+la+pasta" target="_blank" rel="noopener" class="delivery-btn lieferando">
+                <span class="app-icon">L</span>
+                Lieferando
+              </a>
+              <a href="https://www.wolt.com/de/deu/search?q=viva+la+pasta" target="_blank" rel="noopener" class="delivery-btn wolt">
+                <span class="app-icon">W</span>
+                Wolt
+              </a>
+              <a href="https://www.ubereats.com/search?q=viva+la+pasta" target="_blank" rel="noopener" class="delivery-btn ubereats">
+                <span class="app-icon">U</span>
+                Uber Eats
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== IMPRESSUM ==================== -->
+  <section class="legal-section" id="impressum">
+    <div class="container">
+      <span class="section-label">Rechtliches</span>
+      <h2 class="section-title">Impressum</h2>
+      <p class="legal-updated">Angaben gemäß &sect; 5 TMG</p>
+
+      <div class="legal-block">
+        <h3>Betreiber</h3>
+        <p>
+          Viva la Pasta<br>
+          [Vor- und Nachname des Geschäftsführers]<br>
+          Bahnhofstraße 9<br>
+          52064 Aachen<br>
+          Deutschland
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Kontakt</h3>
+        <p>
+          Telefon: <a href="tel:+4924112345678">0241 123 456 78</a><br>
+          E-Mail: <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Umsatzsteuer-ID</h3>
+        <p>
+          Umsatzsteuer-Identifikationsnummer gemäß &sect;27 a Umsatzsteuergesetz:<br>
+          [DE 123 456 789]
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Verantwortlich für den Inhalt</h3>
+        <p>
+          [Vor- und Nachname]<br>
+          Bahnhofstraße 9<br>
+          52064 Aachen
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Streitschlichtung</h3>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Haftung für Inhalte</h3>
+        <p>
+          Als Diensteanbieter sind wir gemäß &sect; 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+          nach den allgemeinen Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als
+          Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+          Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+          Tätigkeit hinweisen.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+          Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+          Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+          Seiten verantwortlich.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+          dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DATENSCHUTZ ==================== -->
+  <section class="legal-section" id="datenschutz" style="background: var(--cream-dark);">
+    <div class="container">
+      <span class="section-label">Rechtliches</span>
+      <h2 class="section-title">Datenschutzerklärung</h2>
+      <p class="legal-updated">Stand: September 2026</p>
+
+      <div class="legal-block">
+        <h3>1. Datenschutz auf einen Blick</h3>
+        <p>
+          Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen
+          personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten
+          sind alle Daten, mit denen du persönlich identifiziert werden kannst.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>2. Datenerfassung auf dieser Website</h3>
+        <p><strong>Wer ist verantwortlich?</strong></p>
+        <p>
+          Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen
+          Kontaktdaten kannst du dem Impressum dieser Website entnehmen.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>3. Hosting &amp; Server-Log-Dateien</h3>
+        <p>
+          Beim Aufruf dieser Website werden automatisch Informationen in sogenannten
+          Server-Log-Dateien gespeichert, die dein Browser automatisch übermittelt. Dies sind:
+        </p>
+        <ul>
+          <li>Browsertyp und Browserversion</li>
+          <li>Verwendetes Betriebssystem</li>
+          <li>Referrer URL</li>
+          <li>Hostname des zugreifenden Rechners</li>
+          <li>Uhrzeit der Serveranfrage</li>
+        </ul>
+        <p>
+          Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>4. Kontaktformular</h3>
+        <p>
+          Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem
+          Formular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der
+          Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir
+          nicht ohne deine Einwilligung weiter.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>5. Deine Rechte</h3>
+        <p>Du hast jederzeit das Recht auf:</p>
+        <ul>
+          <li>Auskunft über deine gespeicherten personenbezogenen Daten</li>
+          <li>Berichtigung unrichtiger Daten</li>
+          <li>Löschung deiner gespeicherten Daten</li>
+          <li>Einschränkung der Datenverarbeitung</li>
+          <li>Datenübertragbarkeit</li>
+          <li>Widerspruch gegen die Verarbeitung</li>
+        </ul>
+        <p>
+          Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich jederzeit an uns
+          wenden.
+        </p>
+      </div>
+
+      <div class="legal-block">
+        <h3>6. Widerspruch gegen Werbe-E-Mails</h3>
+        <p>
+          Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur
+          Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird
+          hiermit widersprochen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">Viva la <span>Pasta</span></a>
+          <p>
+            Frische Pasta to-go in Aachen — handgemacht, schnell und voller Leidenschaft.
+          </p>
+          <div class="footer-social">
+            <!-- TODO: Replace with real profile URLs -->
+            <a href="https://www.instagram.com/vivalapasta" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://www.facebook.com/vivalapasta" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+            <a href="https://www.tiktok.com/@vivalapasta" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links</h4>
+          <a href="#konzept">Konzept</a>
+          <a href="#speisekarte">Speisekarte</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#standort">Standort</a>
+          <a href="#kontakt">Bestellen</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="tel:+4924112345678">0241 123 456 78</a>
+          <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
+          <a href="#standort">Bahnhofstraße 9, Aachen</a>
+        </div>
+      </div>
+
+      <!-- Allergen Notice -->
+      <div class="footer-allergen">
+        <p>
+          Allergene: Alle Speisen können Spuren von Nüssen, Gluten, Milch, Eiern, Soja und Sellerie enthalten.
+          Bitte informiere dich vor Ort über die Zutatenliste und sprich unser Personal bei Fragen an.
+        </p>
+      </div>
+
+      <div class="footer-bottom" style="margin-top: 24px;">
+        <p>&copy; <span id="year">2026</span> Viva la Pasta. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal-links">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+        </div>
+        <a href="#hero" class="back-to-top">&#8593; Nach oben</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ---- Sticky Navbar ----
+    const navbar = document.getElementById('navbar');
+    const handleScroll = () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // ---- Auto-update copyright year ----
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ---- Mobile Menu ----
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('mobileOverlay');
+
+    const toggleMenu = () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) toggleMenu();
+      });
+    });
+
+    // ---- Menu Tabs ----
+    const tabs = document.querySelectorAll('.menu-tab');
+    const panels = document.querySelectorAll('.menu-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+
+        // Re-trigger fade-in for newly visible cards
+        document.querySelectorAll('.menu-panel.active .fade-in').forEach(el => {
+          el.classList.remove('visible');
+          void el.offsetWidth;
+          observer.observe(el);
+        });
+      });
+    });
+
+    // ---- Scroll-triggered Fade-in ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ---- Contact Form ----
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = form.querySelector('.btn-primary');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('show');
+        } else {
+          throw new Error('Senden fehlgeschlagen');
+        }
+      } catch (err) {
+        alert('Leider ist etwas schiefgelaufen. Bitte versuche es erneut oder ruf uns direkt an.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Nachricht senden';
+      }
+    });
+  </script>
+
+</body>
+</html>
