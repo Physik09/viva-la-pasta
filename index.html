@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viva la Pasta — Frisch. Schnell. Lecker.</title>
-  <meta name="description" content="Viva la Pasta — Frische Pasta to-go in Aachen. Handgemachte Pasta, regionale Zutaten, sofort genussbereit.">
+  <meta name="description" content="Viva la Pasta — Frische Pasta to-go in Aachen. Regionale Zutaten, sofort genussbereit.">
   <meta name="author" content="Viva la Pasta">
   <meta name="theme-color" content="#7A1F2B">
   <meta name="color-scheme" content="light">
@@ -15,20 +15,20 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Viva la Pasta">
   <meta property="og:title" content="Viva la Pasta — Frisch. Schnell. Lecker.">
-  <meta property="og:description" content="Handgemachte Pasta to-go in Aachen. Frische Zutaten, sofort genussbereit.">
+  <meta property="og:description" content="Frisch gekochte Pasta to-go in Aachen. Regionale Zutaten, sofort genussbereit.">
   <meta property="og:url" content="https://www.vivalapasta.de/">
   <meta property="og:image" content="https://www.vivalapasta.de/images/gallery-1.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Viva la Pasta — Frisch. Schnell. Lecker.">
-  <meta name="twitter:description" content="Handgemachte Pasta to-go in Aachen. Frische Zutaten, sofort genussbereit.">
+  <meta name="twitter:description" content="Frisch gekochte Pasta to-go in Aachen. Regionale Zutaten, sofort genussbereit.">
   <meta name="twitter:image" content="https://www.vivalapasta.de/images/gallery-1.jpg">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1F2B'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23C9A96E' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -194,6 +194,27 @@
     .navbar.scrolled .nav-logo { color: var(--warm-dark); }
 
     .nav-logo span { color: var(--gold); }
+
+    .nav-logo-img {
+      display: block;
+      height: 34px;
+      width: auto;
+    }
+
+    /* Brand logo sprite */
+    .svg-defs {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .hero-logo-img {
+      display: block;
+      width: min(300px, 80vw);
+      height: auto;
+      margin: 0 auto;
+    }
 
     .nav-links {
       display: flex;
@@ -434,115 +455,6 @@
     }
 
     .bowl-header .section-subtitle { margin: 0 auto; }
-
-    .bowl-steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 64px;
-    }
-
-    @media (min-width: 640px) {
-      .bowl-steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    }
-
-    .bowl-step {
-      text-align: center;
-      padding: 32px 24px;
-      background: var(--white);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition);
-      position: relative;
-    }
-
-    .bowl-step:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .bowl-step-number {
-      width: 48px; height: 48px;
-      background: var(--burgundy);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 0 auto 16px;
-    }
-
-    .bowl-step h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
-
-    .bowl-step p {
-      font-size: 0.9rem;
-      color: var(--warm-mid);
-      line-height: 1.6;
-    }
-
-    .bowl-step::after {
-      content: '→';
-      position: absolute;
-      right: -20px; top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2rem;
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .bowl-step:last-child::after { display: none; }
-
-    @media (max-width: 639px) {
-      .bowl-step::after {
-        right: 50%; top: auto; bottom: -18px;
-        transform: translateX(50%) rotate(90deg);
-      }
-    }
-
-    /* Pasta Icons Grid */
-    .pasta-icons-label {
-      text-align: center;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--warm-mid);
-      margin-bottom: 24px;
-    }
-
-    .pasta-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .pasta-icon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: transform var(--transition);
-    }
-
-    .pasta-icon:hover { transform: translateY(-4px); }
-
-    .pasta-icon svg {
-      width: 72px; height: 72px;
-    }
-
-    .pasta-icon-name {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--warm-mid);
-      letter-spacing: 0.5px;
-    }
 
     /* ============================================================
        MENU SECTION (Speisekarte)
@@ -1206,10 +1118,508 @@
     .legal-block a:hover { color: var(--burgundy-light); }
 
     /* ============================================================
+       BUILD-YOUR-BOWL CONFIGURATOR
+       ============================================================ */
+    .configurator {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .configurator-step {
+      margin-bottom: 40px;
+    }
+
+    .configurator-step-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .configurator-step-number {
+      width: 34px; height: 34px;
+      background: var(--burgundy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .configurator-step-head h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .clickable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .clickable-grid { grid-template-columns: repeat(4, 1fr); }
+      .clickable-grid.sauces { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .choice-card {
+      background: var(--white);
+      border: 2px solid var(--cream-dark);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--warm-mid);
+      transition: all var(--transition);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .choice-card:hover {
+      border-color: var(--burgundy-light);
+      transform: translateY(-2px);
+    }
+
+    .choice-card.sauces-card {
+      align-items: flex-start;
+      text-align: left;
+      gap: 6px;
+      padding: 18px 16px;
+    }
+
+    .choice-card.sauces-card .choice-title {
+      font-weight: 600;
+      color: var(--warm-dark);
+    }
+
+    .choice-card.sauces-card .choice-desc {
+      font-size: 0.72rem;
+      color: var(--warm-mid);
+      line-height: 1.4;
+    }
+
+    .choice-card svg {
+      width: 44px; height: 44px;
+    }
+
+    .chip-price {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--burgundy);
+    }
+
+    .choice-card.selected {
+      border-color: var(--burgundy);
+      background: rgba(122, 31, 43, 0.05);
+      color: var(--burgundy-dark);
+      box-shadow: 0 0 0 3px rgba(122, 31, 43, 0.12);
+    }
+
+    .choice-card.selected .chip-price { color: var(--burgundy); }
+
+    /* Order bar */
+    .order-bar {
+      position: sticky;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      z-index: 900;
+    }
+
+    .order-total {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .order-total .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+    }
+
+    .order-total strong {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--burgundy);
+    }
+
+    .order-total .hint {
+      font-size: 0.75rem;
+      color: var(--warm-mid);
+    }
+
+    /* ============================================================
+       CART
+       ============================================================ */
+    .cart-fab {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 950;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .cart-fab:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-2px);
+    }
+
+    .cart-fab svg { width: 26px; height: 26px; }
+
+    .cart-fab .cart-count {
+      position: absolute;
+      top: -4px; right: -4px;
+      min-width: 22px; height: 22px;
+      padding: 0 5px;
+      border-radius: 11px;
+      background: var(--gold);
+      color: var(--warm-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-overlay {
+      position: fixed; inset: 0;
+      background: rgba(44, 36, 32, 0.55);
+      z-index: 1050;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+
+    .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -100%;
+      width: min(380px, 92vw);
+      height: 100vh;
+      background: var(--cream);
+      z-index: 1100;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      transition: right var(--transition);
+    }
+
+    .cart-drawer.open { right: 0; }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .cart-header h3 { font-size: 1.15rem; margin: 0; }
+
+    .cart-close {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--warm-mid);
+    }
+
+    .cart-close:hover { color: var(--burgundy); }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 48px 10px;
+      color: var(--warm-mid);
+      font-size: 0.9rem;
+    }
+
+    .cart-item {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cart-item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cart-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--warm-dark);
+    }
+
+    .cart-item-details {
+      font-size: 0.78rem;
+      color: var(--warm-mid);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    .cart-item-price {
+      font-weight: 600;
+      color: var(--burgundy);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .qty-btn {
+      width: 26px; height: 26px;
+      border-radius: 6px;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--warm-dark);
+    }
+
+    .qty-btn:hover { border-color: var(--burgundy); color: var(--burgundy); }
+
+    .qty {
+      font-size: 0.85rem;
+      min-width: 18px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .cart-item-remove {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: var(--warm-mid);
+      font-size: 0.78rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .cart-item-remove:hover { color: var(--burgundy); }
+
+    .cart-footer {
+      padding: 16px 24px 24px;
+      border-top: 1px solid var(--cream-dark);
+      background: var(--white);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .cart-total span { font-size: 0.85rem; color: var(--warm-mid); }
+
+    .cart-total strong {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--burgundy);
+    }
+
+    .cart-footer .btn-primary { width: 100%; text-align: center; }
+
+    .cart-note {
+      font-size: 0.75rem;
+      color: var(--warm-mid);
+      margin-top: 10px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       LIGHTBOX
+       ============================================================ */
+    .lightbox {
+      position: fixed; inset: 0;
+      background: rgba(20, 15, 12, 0.94);
+      z-index: 1200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 82vh;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lb-close, .lb-prev, .lb-next {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 50%;
+      width: 46px; height: 46px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      line-height: 1;
+    }
+
+    .lb-close { top: 20px; right: 20px; }
+    .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover {
+      background: rgba(201, 169, 110, 0.25);
+      border-color: var(--gold);
+    }
+
+    /* ============================================================
+       OPEN / CLOSED STATUS
+       ============================================================ */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-top: 10px;
+    }
+
+    .status-badge.open { background: rgba(74, 93, 58, 0.12); color: #4A5D3A; }
+    .status-badge.closed { background: rgba(185, 28, 28, 0.1); color: #B91C1C; }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-badge.open .status-dot { background: #4A5D3A; }
+    .status-badge.closed .status-dot { background: #B91C1C; }
+
+    /* ============================================================
+       COOKIE CONSENT
+       ============================================================ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1150;
+      background: var(--warm-dark);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 20px 0;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .cookie-banner.show { transform: translateY(0); }
+
+    .cookie-banner .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-banner p {
+      font-size: 0.85rem;
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .cookie-banner a { color: var(--gold); text-decoration: underline; }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cookie-btn.accept { background: var(--burgundy); color: #fff; }
+    .cookie-btn.accept:hover { background: var(--burgundy-light); }
+
+    .cookie-btn.essential {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .cookie-btn.essential:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ============================================================
        MOBILE RESPONSIVE
        ============================================================ */
     @media (max-width: 768px) {
       :root { --section-padding: 72px 0; }
+
+      .cart-fab {
+        bottom: 96px;
+        width: 54px; height: 54px;
+      }
 
       .nav-links {
         position: fixed;
@@ -1270,7 +1680,7 @@
     "image": "https://www.vivalapasta.de/images/gallery-1.jpg",
     "priceRange": "€",
     "url": "https://www.vivalapasta.de/",
-    "telephone": "+49 241 123 456 78",
+    "telephone": "+4917670647264",
     "email": "ciao@vivalapasta.de",
     "address": {
       "@type": "PostalAddress",
@@ -1297,6 +1707,49 @@
 
 <body>
 
+  <!-- ==================== BRAND LOGO (SVG symbol) ==================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-defs" aria-hidden="true">
+    <symbol id="brand-logo" viewBox="0 0 600 292">
+      <!-- Chef hat: small line-art outline, cream stroke -->
+      <g transform="translate(300 40)" stroke="#FAF6ED" fill="none" stroke-linecap="round" stroke-width="3">
+        <path d="M-70 0 A70 34 0 0 1 70 0"/>
+        <path d="M-36 -22 v-8 M0 -28 v-8 M36 -22 v-8" stroke-width="2.5"/>
+        <rect x="-82" y="2" width="164" height="13" rx="4"/>
+      </g>
+
+      <!-- Wordmark: large script, cream -->
+      <text x="300" y="152" text-anchor="middle"
+            font-family="Parisienne, 'Brush Script MT', cursive"
+            font-size="108" fill="#FAF6ED">Viva la Pasta</text>
+
+      <!-- Ribbon: soft cream banner with pointed ends + folded tails -->
+      <path d="M170 176 L450 176 L438 196 L450 216 L170 216 L182 196 Z" fill="#F0E2BE"/>
+      <path d="M170 176 L130 180 L122 196 L130 212 L170 216 Z" fill="#F0E2BE"/>
+      <path d="M450 176 L490 180 L498 196 L490 212 L450 216 Z" fill="#F0E2BE"/>
+
+      <!-- PASTA TO GO: spaced caps with hearts inside ribbon -->
+      <text x="310" y="201" text-anchor="middle"
+            font-family="Inter, -apple-system, sans-serif"
+            font-size="19" font-weight="600" letter-spacing="3" fill="#FAF6ED"
+            textLength="250" lengthAdjust="spacing">♥ PASTA TO GO ♥</text>
+
+      <!-- Tagline: small spaced caps, matches ribbon body width -->
+      <text x="300" y="244" text-anchor="middle"
+            font-family="Inter, -apple-system, sans-serif"
+            font-size="16" font-weight="600" letter-spacing="5" fill="#FAF6ED"
+            textLength="300" lengthAdjust="spacing">FRISCH · SCHNELL · LECKER</text>
+
+      <!-- Decorative lines + small heart underneath -->
+      <g stroke="#FAF6ED" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M185 262 H245"/>
+        <path d="M355 262 H415"/>
+      </g>
+      <path transform="translate(300 262) scale(0.35) translate(-12 -12)"
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            fill="#FAF6ED"/>
+    </symbol>
+  </svg>
+
   <!-- ==================== MOBILE OVERLAY ==================== -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
@@ -1307,6 +1760,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#konzept">Konzept</a></li>
         <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#build-bowl">Konfigurator</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#standort">Standort</a></li>
         <li><a href="#kontakt" class="nav-cta">Jetzt bestellen</a></li>
@@ -1326,11 +1780,12 @@
       <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content fade-in">
-        <div class="hero-badge">Aachen &middot; Handgemacht &middot; Täglich frisch</div>
-        <h1>Viva la <span>Pasta</span></h1>
-        <p class="hero-tagline">Frisch. Schnell. Lecker.</p>
+        <div class="hero-badge">Aachen &middot; Frisch gekocht &middot; Täglich frisch</div>
+        <h1 class="hero-logo">
+          <img class="hero-logo-img" src="images/viva-la-pasta-logo-transparent.png" alt="Viva la Pasta — Frisch. Schnell. Lecker.">
+        </h1>
         <p class="hero-sub">
-          Handgemachte Pasta, regionale Zutaten und jede Menge Leidenschaft —
+          Frisch gekochte Pasta, regionale Zutaten und jede Menge Leidenschaft —
           schnell und frisch, genau wie du es brauchst.
         </p>
         <div class="hero-buttons">
@@ -1355,97 +1810,110 @@
           </p>
         </div>
 
-        <!-- 3-Step Process -->
-        <div class="bowl-steps">
-          <div class="bowl-step fade-in">
-            <div class="bowl-step-number">1</div>
-            <h3>Wähle deine Pasta</h3>
-            <p>Spaghetti, Penne, Fusilli und mehr — jede Shape mit eigenem Charakter.</p>
-          </div>
-          <div class="bowl-step fade-in">
-            <div class="bowl-step-number">2</div>
-            <h3>Wähle deine Sauce</h3>
-            <p>Von klassischer Bolognese bis scharfer Arrabbiata — für jeden Geschmack.</p>
-          </div>
-          <div class="bowl-step fade-in">
-            <div class="bowl-step-number">3</div>
-            <h3>Wähle dein Topping</h3>
-            <p>Parmesan, Hähnchen, Garnelen oder Trüffelöl — mach es zu deinem Teller.</p>
-          </div>
-        </div>
+        <!-- ==================== BUILD-YOUR-BOWL CONFIGURATOR ==================== -->
+        <div class="configurator" id="build-bowl">
 
-        <!-- Pasta Shape Icons -->
-        <p class="pasta-icons-label fade-in">Unsere Pasta-Formen</p>
-        <div class="pasta-icons fade-in">
+          <!-- Step 1 -->
+          <div class="configurator-step" data-step="1">
+            <div class="configurator-step-head">
+              <div class="configurator-step-number">1</div>
+              <h3>Wähle deine Pasta</h3>
+            </div>
+            <div class="clickable-grid shapes" id="shapeOptions">
 
-          <!-- Spaghetti -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
-              <path d="M20 14c2 8-4 16 0 24s-4 16 0 24c4 8-2 16 2 22"/>
-              <path d="M32 10c-1 10 3 18 0 28s3 16 0 24c-3 10 1 18-1 24"/>
-              <path d="M44 12c1 8-3 18 1 26s-3 16 1 26c4 8-1 14 0 18"/>
-              <path d="M56 14c-2 8 4 16 0 24s4 16 0 24c-4 8 2 16-2 22"/>
-              <path d="M66 10c1 10-3 18 0 28s3 16 0 24"/>
-            </svg>
-            <span class="pasta-icon-name">Spaghetti</span>
-          </div>
+              <button type="button" class="choice-card" data-shape="Spaghetti">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+                  <path d="M20 14c2 8-4 16 0 24s-4 16 0 24c4 8-2 16 2 22"/>
+                  <path d="M32 10c-1 10 3 18 0 28s3 16 0 24c-3 10 1 18-1 24"/>
+                  <path d="M44 12c1 8-3 18 1 26s-3 16 1 26c4 8-1 14 0 18"/>
+                  <path d="M56 14c-2 8 4 16 0 24s4 16 0 24c-4 8 2 16-2 22"/>
+                  <path d="M66 10c1 10-3 18 0 28s3 16 0 24"/>
+                </svg>
+                <span>Spaghetti</span>
+              </button>
 
-          <!-- Fettuccine -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2.5" stroke-linecap="round">
-              <path d="M16 16c8 4 16-2 24 2s16 6 24 2"/>
-              <path d="M14 30c10 4 18-2 26 2s14 6 26 2"/>
-              <path d="M16 44c8 4 16-2 24 2s16 6 24 2"/>
-              <path d="M14 58c10 4 18-2 26 2s14 6 26 2"/>
-            </svg>
-            <span class="pasta-icon-name">Fettuccine</span>
-          </div>
+              <button type="button" class="choice-card" data-shape="Fettuccine">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M16 16c8 4 16-2 24 2s16 6 24 2"/>
+                  <path d="M14 30c10 4 18-2 26 2s14 6 26 2"/>
+                  <path d="M16 44c8 4 16-2 24 2s16 6 24 2"/>
+                  <path d="M14 58c10 4 18-2 26 2s14 6 26 2"/>
+                </svg>
+                <span>Fettuccine</span>
+              </button>
 
-          <!-- Tagliatelle -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round">
-              <path d="M14 18c6 3 14-2 22 1s14 5 22 2c6-2 10 1 12 3"/>
-              <path d="M12 34c8 3 16-2 24 1s12 5 24 2"/>
-              <path d="M14 50c6 3 14-2 22 1s14 5 22 2"/>
-              <path d="M16 64c4 2 10-1 16 1s10 3 16 1"/>
-            </svg>
-            <span class="pasta-icon-name">Tagliatelle</span>
-          </div>
+              <button type="button" class="choice-card" data-shape="Tagliatelle">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round">
+                  <path d="M14 18c6 3 14-2 22 1s14 5 22 2c6-2 10 1 12 3"/>
+                  <path d="M12 34c8 3 16-2 24 1s12 5 24 2"/>
+                  <path d="M14 50c6 3 14-2 22 1s14 5 22 2"/>
+                  <path d="M16 64c4 2 10-1 16 1s10 3 16 1"/>
+                </svg>
+                <span>Tagliatelle</span>
+              </button>
 
-          <!-- Fusilli -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
-              <path d="M24 10c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 6 8 12"/>
-              <path d="M42 12c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 4 8 10"/>
-              <path d="M60 10c0 6 6 6 6 12s-6 6-6 12 6 6 6 12-6 6-6 12 6 6 6 12"/>
-            </svg>
-            <span class="pasta-icon-name">Fusilli</span>
-          </div>
+              <button type="button" class="choice-card" data-shape="Fusilli">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+                  <path d="M24 10c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 6 8 12"/>
+                  <path d="M42 12c0 6 8 6 8 12s-8 6-8 12 8 6 8 12-8 6-8 12 8 4 8 10"/>
+                  <path d="M60 10c0 6 6 6 6 12s-6 6-6 12 6 6 6 12-6 6-6 12 6 6 6 12"/>
+                </svg>
+                <span>Fusilli</span>
+              </button>
 
-          <!-- Penne -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 18l8-6 24 0 8 6"/>
-              <path d="M20 18l0 50 8 6"/>
-              <path d="M60 18l0 50-8 6"/>
-              <path d="M20 32h40"/>
-              <path d="M20 46h40"/>
-              <path d="M28 12l24 0"/>
-            </svg>
-            <span class="pasta-icon-name">Penne</span>
+              <button type="button" class="choice-card" data-shape="Penne">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 18l8-6 24 0 8 6"/>
+                  <path d="M20 18l0 50 8 6"/>
+                  <path d="M60 18l0 50-8 6"/>
+                  <path d="M20 32h40"/>
+                  <path d="M20 46h40"/>
+                  <path d="M28 12l24 0"/>
+                </svg>
+                <span>Penne</span>
+              </button>
+
+              <button type="button" class="choice-card" data-shape="Rigatoni">
+                <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
+                  <rect x="22" y="12" width="36" height="56" rx="3"/>
+                  <line x1="28" y1="12" x2="28" y2="68"/>
+                  <line x1="34" y1="12" x2="34" y2="68"/>
+                  <line x1="40" y1="12" x2="40" y2="68"/>
+                  <line x1="46" y1="12" x2="46" y2="68"/>
+                  <line x1="52" y1="12" x2="52" y2="68"/>
+                </svg>
+                <span>Rigatoni</span>
+              </button>
+
+            </div>
           </div>
 
-          <!-- Rigatoni -->
-          <div class="pasta-icon">
-            <svg viewBox="0 0 80 80" fill="none" stroke="var(--burgundy)" stroke-width="2" stroke-linecap="round">
-              <rect x="22" y="12" width="36" height="56" rx="3"/>
-              <line x1="28" y1="12" x2="28" y2="68"/>
-              <line x1="34" y1="12" x2="34" y2="68"/>
-              <line x1="40" y1="12" x2="40" y2="68"/>
-              <line x1="46" y1="12" x2="46" y2="68"/>
-              <line x1="52" y1="12" x2="52" y2="68"/>
-            </svg>
-            <span class="pasta-icon-name">Rigatoni</span>
+        <!-- Step 2 -->
+          <div class="configurator-step" data-step="2">
+            <div class="configurator-step-head">
+              <div class="configurator-step-number">2</div>
+              <h3>Wähle deine Sauce</h3>
+            </div>
+            <div class="clickable-grid sauces" id="sauceOptions"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="configurator-step" data-step="3">
+            <div class="configurator-step-head">
+              <div class="configurator-step-number">3</div>
+              <h3>Wähle dein Topping</h3>
+              <span style="margin-left:auto; font-size:.75rem; color: var(--warm-mid);">optional &middot; mehrfach wählbar</span>
+            </div>
+            <div class="clickable-grid toppings" id="toppingOptions"></div>
+          </div>
+
+          <!-- Order bar -->
+          <div class="order-bar">
+            <div class="order-total">
+              <span class="label">Dein Teller</span>
+              <strong id="configPrice">&euro;0</strong>
+            </div>
+            <button type="button" class="btn-primary" id="addToCart">In den Warenkorb</button>
           </div>
 
         </div>
@@ -1472,224 +1940,22 @@
 
         <!-- ==================== PASTA ==================== -->
         <div class="menu-panel active" id="panel-pasta" role="tabpanel">
-          <div class="menu-grid">
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Bolognese</h3>
-                <span class="menu-card-price">&euro;11</span>
-              </div>
-              <p class="menu-card-desc">Klassisches Hackfleischragout, langsam geschmort mit Tomaten und Gemüse.</p>
-              <p class="menu-card-shape">mit Tagliatelle</p>
-              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Arrabbiata</h3>
-                <span class="menu-card-price">&euro;8</span>
-              </div>
-              <p class="menu-card-desc">Scharfe Tomatensauce mit Chili und Knoblauch — für alle, die es pikant mögen.</p>
-              <p class="menu-card-shape">mit Penne</p>
-              <div class="menu-card-tags"><span class="menu-card-tag spicy">Scharf</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Aglio e Olio</h3>
-                <span class="menu-card-price">&euro;8</span>
-              </div>
-              <p class="menu-card-desc">Knoblauch und Olivenöl — simpel, perfekt, ein Klassiker aus Neapel.</p>
-              <p class="menu-card-shape">mit Spaghetti</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Alfredo</h3>
-                <span class="menu-card-price">&euro;8</span>
-              </div>
-              <p class="menu-card-desc">Cremige Käsesauce mit Parmesan und Butter — urig und Seele wärmend.</p>
-              <p class="menu-card-shape">mit Fettuccine</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Pomodoro</h3>
-                <span class="menu-card-price">&euro;8</span>
-              </div>
-              <p class="menu-card-desc">Klassische Tomatensauce mit frischem Basilikum — die Essenz Italiens.</p>
-              <p class="menu-card-shape">mit Spaghetti</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Tonno</h3>
-                <span class="menu-card-price">&euro;11</span>
-              </div>
-              <p class="menu-card-desc">Thunfischsauce mit Kapern und Zwiebeln — mediterran und voll im Geschmack.</p>
-              <p class="menu-card-shape">mit Spaghetti</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Quattro Formaggi</h3>
-                <span class="menu-card-price">&euro;12</span>
-              </div>
-              <p class="menu-card-desc">Vier Käsesorte — Gorgonzola, Parmesan, Mozzarella und Pecorino in cremiger Sauce.</p>
-              <p class="menu-card-shape">mit Rigatoni oder Fusilli</p>
-              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Pilz &amp; Brokkoli</h3>
-                <span class="menu-card-price">&euro;10</span>
-              </div>
-              <p class="menu-card-desc">Cremige Pilz-Brokkoli-Sauce — herb, erdig und überraschend vielseitig.</p>
-              <p class="menu-card-shape">mit Fusilli</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-          </div>
+          <div class="menu-grid" id="menuGrid-pasta"></div>
         </div>
 
         <!-- ==================== TOPPINGS ==================== -->
         <div class="menu-panel" id="panel-toppings" role="tabpanel">
-          <div class="menu-grid">
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Parmesan</h3>
-                <span class="menu-card-price">+&euro;1</span>
-              </div>
-              <p class="menu-card-desc">Frisch geriebener Parmigiano Reggiano — das i-Tüpfelchen.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Oliven</h3>
-                <span class="menu-card-price">+&euro;1</span>
-              </div>
-              <p class="menu-card-desc">Schwarze Kalamata-Oliven, mild und fruchtig.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Cherrytomaten</h3>
-                <span class="menu-card-price">+&euro;1</span>
-              </div>
-              <p class="menu-card-desc">Halbierte, frische Cherrytomaten — süß und aromatisch.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Rucola</h3>
-                <span class="menu-card-price">+&euro;1</span>
-              </div>
-              <p class="menu-card-desc">Frische Rucola-Blätter — peppig und leicht bitter.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Hähnchenbrust</h3>
-                <span class="menu-card-price">+&euro;2</span>
-              </div>
-              <p class="menu-card-desc">Gegrillte Hähnchenbrust, zart und würzig marinier.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Garnelen</h3>
-                <span class="menu-card-price">+&euro;3</span>
-              </div>
-              <p class="menu-card-desc">Königsgarnelen, kurz angeröstet mit Knoblauch und Kräutern.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Trüffelöl</h3>
-                <span class="menu-card-price">+&euro;2</span>
-              </div>
-              <p class="menu-card-desc">Echten Schwarzen Trüffel aus Umbrien — intensiv und unvergleichlich.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag extra">Premium</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Jalapeños</h3>
-                <span class="menu-card-price">+&euro;1</span>
-              </div>
-              <p class="menu-card-desc">Eingelegte Jalapeño-Scheiben — für die Kick-Liebhaber.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag spicy">Scharf</span></div>
-            </div>
-          </div>
+          <div class="menu-grid" id="menuGrid-toppings"></div>
         </div>
 
         <!-- ==================== INSALATE ==================== -->
         <div class="menu-panel" id="panel-insalate" role="tabpanel">
-          <div class="menu-grid">
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Insalata Mista</h3>
-                <span class="menu-card-price">&euro;5</span>
-              </div>
-              <p class="menu-card-desc">Gemischter Salat mit knackigem Eisbergsalat, Gurke, Tomate und Dressing nach Wahl.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Caesar Salad</h3>
-                <span class="menu-card-price">&euro;7</span>
-              </div>
-              <p class="menu-card-desc">Rucola und Römersalat mit Parmesan-Croutons, Parmesan-Späne und Caesar-Dressing.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Caprese</h3>
-                <span class="menu-card-price">&euro;7</span>
-              </div>
-              <p class="menu-card-desc">Buffalo-Mozzarella, reife Tomaten, frisches Basilikum und native Olivenöl extra.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag signature">Signature</span><span class="menu-card-tag vegetarian">Vegetarisch</span></div>
-            </div>
-          </div>
+          <div class="menu-grid" id="menuGrid-insalate"></div>
         </div>
 
         <!-- ==================== GETRÄNKE ==================== -->
         <div class="menu-panel" id="panel-getraenke" role="tabpanel">
-          <div class="menu-grid">
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Wasser</h3>
-                <span class="menu-card-price">&euro;2</span>
-              </div>
-              <p class="menu-card-desc">Hausbrand still oder medium, 0,5L.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Limonade</h3>
-                <span class="menu-card-price">&euro;3</span>
-              </div>
-              <p class="menu-card-desc">Hausgemachte Limonade — Zitrone, Minze oder Orange.</p>
-              <div class="menu-card-tags"><span class="menu-card-tag vegetarian">Hausgemacht</span></div>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Spezi</h3>
-                <span class="menu-card-price">&euro;3</span>
-              </div>
-              <p class="menu-card-desc">Cola und Orangenlimonade — der Klassiker.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Bier</h3>
-                <span class="menu-card-price">&euro;4</span>
-              </div>
-              <p class="menu-card-desc">Lokales Craft Bier vom Fass, 0,3L — frag nach der aktuellen Auswahl.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Weißwein</h3>
-                <span class="menu-card-price">&euro;5</span>
-              </div>
-              <p class="menu-card-desc">Riesling oder Sauvignon Blanc — ein Glas, perfekt zur Pasta.</p>
-            </div>
-            <div class="menu-card fade-in">
-              <div class="menu-card-header">
-                <h3>Rotwein</h3>
-                <span class="menu-card-price">&euro;5</span>
-              </div>
-              <p class="menu-card-desc">Montepulciano oder Sangiovese — ein Glas, vollmundig und fruchtig.</p>
-            </div>
-          </div>
+          <div class="menu-grid" id="menuGrid-getraenke"></div>
         </div>
 
         <!-- Allergen Footnote -->
@@ -1716,7 +1982,7 @@
 
         <div class="gallery-grid">
           <div class="gallery-item fade-in">
-            <img src="images/gallery-1.jpg" alt="Handgemachte Pasta" loading="lazy" class="gallery-photo">
+            <img src="images/gallery-1.jpg" alt="Frische Pasta" loading="lazy" class="gallery-photo">
           </div>
           <div class="gallery-item fade-in">
             <img src="images/gallery-2.jpg" alt="Bolognese im Teller" loading="lazy" class="gallery-photo">
@@ -1762,7 +2028,7 @@
               <p class="location-text">
                 Bahnhofstraße 9<br>
                 52064 Aachen<br>
-                <a href="tel:+4924112345678">0241 123 456 78</a><br>
+                <a href="tel:+4917670647264">+49 176 70647264</a><br>
                 <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
               </p>
             </div>
@@ -1772,6 +2038,7 @@
               <div class="location-text" style="line-height: 2.2;">
                 <strong>Täglich:</strong> 12:00 – 22:00<br>
                 <span style="font-size: 0.85rem; color: var(--warm-mid);">Keine Ruhetage — wir sind immer für dich da.</span>
+                <span class="status-badge closed" id="openState"><span class="status-dot"></span><span class="status-text">Status wird geladen…</span></span>
               </div>
             </div>
           </div>
@@ -1830,7 +2097,7 @@
               <div class="phone-icon">&#9743;</div>
               <div class="order-phone-text">
                 <strong>Ruf uns an</strong>
-                <span>0241 123 456 78</span>
+                <span>+49 176 70647264</span>
               </div>
             </div>
 
@@ -1877,7 +2144,7 @@
       <div class="legal-block">
         <h3>Kontakt</h3>
         <p>
-          Telefon: <a href="tel:+4924112345678">0241 123 456 78</a><br>
+          Telefon: <a href="tel:+4917670647264">+49 176 70647264</a><br>
           E-Mail: <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
         </p>
       </div>
@@ -2024,9 +2291,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#hero" class="nav-logo">Viva la <span>Pasta</span></a>
+<a href="#hero" class="nav-logo">
+        <img class="nav-logo-img" src="images/viva-la-pasta-logo-transparent.png" alt="Viva la Pasta">
+      </a>
           <p>
-            Frische Pasta to-go in Aachen — handgemacht, schnell und voller Leidenschaft.
+            Pasta to-go in Aachen — jeden Tag frisch zubereitet, schnell und voller Leidenschaft.
           </p>
           <div class="footer-social">
             <!-- TODO: Replace with real profile URLs -->
@@ -2047,7 +2316,7 @@
 
         <div class="footer-col">
           <h4>Kontakt</h4>
-          <a href="tel:+4924112345678">0241 123 456 78</a>
+          <a href="tel:+4917670647264">+49 176 70647264</a>
           <a href="mailto:ciao@vivalapasta.de">ciao@vivalapasta.de</a>
           <a href="#standort">Bahnhofstraße 9, Aachen</a>
         </div>
@@ -2071,6 +2340,57 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==================== CART FAB ==================== -->
+  <button type="button" class="cart-fab" id="cartFab" aria-label="Warenkorb öffnen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="19" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart-count" id="cartCountFab">0</span>
+  </button>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
+    <div class="cart-header">
+      <h3>Dein Warenkorb</h3>
+      <button type="button" class="cart-close" id="cartClose" aria-label="Warenkorb schließen">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Gesamt</span>
+        <strong id="cartTotal">&euro;0</strong>
+      </div>
+      <button type="button" class="btn-primary" id="checkoutWhatsApp">Per WhatsApp bestellen</button>
+      <p class="cart-note">Deine Bestellung öffnet sich in WhatsApp — wir melden uns kurz zur Bestätigung. Zahlung vor Ort.</p>
+    </div>
+  </aside>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Bildansicht">
+    <button type="button" class="lb-close" id="lbClose" aria-label="Schließen">&times;</button>
+    <button type="button" class="lb-prev" id="lbPrev" aria-label="Vorheriges Bild">&lsaquo;</button>
+    <img src="" alt="Galeriebild" id="lbImg">
+    <button type="button" class="lb-next" id="lbNext" aria-label="Nächstes Bild">&rsaquo;</button>
+  </div>
+
+  <!-- ==================== COOKIE CONSENT ==================== -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-Hinweis">
+    <div class="container">
+      <p>
+        Wir setzen nur notwendige technische Einrichtungen ein (z. B. dein Warenkorb) sowie externe Dienste wie Google Maps,
+        Google Fonts und Kontaktformulare. Details findest du in unserer
+        <a href="#datenschutz">Datenschutzerklärung</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn accept" id="cookieAccept">Alle akzeptieren</button>
+        <button type="button" class="cookie-btn essential" id="cookieEssential">Nur notwendige</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================================
        JAVASCRIPT
@@ -2109,6 +2429,23 @@
       });
     });
 
+    // ---- Scroll-triggered Fade-in ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    const observeFadeIns = () => {
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    };
+
     // ---- Menu Tabs ----
     const tabs = document.querySelectorAll('.menu-tab');
     const panels = document.querySelectorAll('.menu-panel');
@@ -2134,20 +2471,334 @@
       });
     });
 
-    // ---- Scroll-triggered Fade-in ----
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    /* ============================================================
+       KONSTANTEN & MENÜ-DATEN
+       ============================================================ */
+    const WHATSAPP_NUMBER = '4917670647264';
+    const CART_KEY = 'viva_cart';
+    const COOKIE_KEY = 'viva_cookie_consent';
+
+    const MENU = {
+      pasta: [
+        { title: 'Bolognese', price: 11, desc: 'Klassisches Hackfleischragout, langsam geschmort mit Tomaten und Gemüse.', shape: 'mit Tagliatelle', tags: [['signature', 'Signature']] },
+        { title: 'Arrabbiata', price: 8, desc: 'Scharfe Tomatensauce mit Chili und Knoblauch — für alle, die es pikant mögen.', shape: 'mit Penne', tags: [['spicy', 'Scharf']] },
+        { title: 'Aglio e Olio', price: 8, desc: 'Knoblauch und Olivenöl — simpel, perfekt, ein Klassiker aus Neapel.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Alfredo', price: 8, desc: 'Cremige Käsesauce mit Parmesan und Butter — urig und Seele wärmend.', shape: 'mit Fettuccine', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Pomodoro', price: 8, desc: 'Klassische Tomatensauce mit frischem Basilikum — die Essenz Italiens.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Tonno', price: 11, desc: 'Thunfischsauce mit Kapern und Zwiebeln — mediterran und voll im Geschmack.', shape: 'mit Spaghetti', tags: [] },
+        { title: 'Quattro Formaggi', price: 12, desc: 'Vier Käsesorte — Gorgonzola, Parmesan, Mozzarella und Pecorino in cremiger Sauce.', shape: 'mit Rigatoni oder Fusilli', tags: [['signature', 'Signature'], ['vegetarian', 'Vegetarisch']] },
+        { title: 'Pilz & Brokkoli', price: 10, desc: 'Cremige Pilz-Brokkoli-Sauce — herb, erdig und überraschend vielseitig.', shape: 'mit Fusilli', tags: [['vegetarian', 'Vegetarisch']] }
+      ],
+      toppings: [
+        { title: 'Parmesan', price: 1, desc: 'Frisch geriebener Parmigiano Reggiano — das i-Tüpfelchen.', tags: [] },
+        { title: 'Oliven', price: 1, desc: 'Schwarze Kalamata-Oliven, mild und fruchtig.', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Cherrytomaten', price: 1, desc: 'Halbierte, frische Cherrytomaten — süß und aromatisch.', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Rucola', price: 1, desc: 'Frische Rucola-Blätter — peppig und leicht bitter.', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Hähnchenbrust', price: 2, desc: 'Gegrillte Hähnchenbrust, zart und würzig marinier.', tags: [] },
+        { title: 'Garnelen', price: 3, desc: 'Königsgarnelen, kurz angeröstet mit Knoblauch und Kräutern.', tags: [] },
+        { title: 'Trüffelöl', price: 2, desc: 'Echten Schwarzen Trüffel aus Umbrien — intensiv und unvergleichlich.', tags: [['extra', 'Premium']] },
+        { title: 'Jalapeños', price: 1, desc: 'Eingelegte Jalapeño-Scheiben — für die Kick-Liebhaber.', tags: [['spicy', 'Scharf']] }
+      ],
+      insalate: [
+        { title: 'Insalata Mista', price: 5, desc: 'Gemischter Salat mit knackigem Eisbergsalat, Gurke, Tomate und Dressing nach Wahl.', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Caesar Salad', price: 7, desc: 'Rucola und Römersalat mit Parmesan-Croutons, Parmesan-Späne und Caesar-Dressing.', tags: [] },
+        { title: 'Caprese', price: 7, desc: 'Buffalo-Mozzarella, reife Tomaten, frisches Basilikum und native Olivenöl extra.', tags: [['signature', 'Signature'], ['vegetarian', 'Vegetarisch']] }
+      ],
+      getraenke: [
+        { title: 'Wasser', price: 2, desc: 'Hausbrand still oder medium, 0,5L.', tags: [] },
+        { title: 'Limonade', price: 3, desc: 'Hausgemachte Limonade — Zitrone, Minze oder Orange.', tags: [['vegetarian', 'Hausgemacht']] },
+        { title: 'Spezi', price: 3, desc: 'Cola und Orangenlimonade — der Klassiker.', tags: [] },
+        { title: 'Bier', price: 4, desc: 'Lokales Craft Bier vom Fass, 0,3L — frag nach der aktuellen Auswahl.', tags: [] },
+        { title: 'Weißwein', price: 5, desc: 'Riesling oder Sauvignon Blanc — ein Glas, perfekt zur Pasta.', tags: [] },
+        { title: 'Rotwein', price: 5, desc: 'Montepulciano oder Sangiovese — ein Glas, vollmundig und fruchtig.', tags: [] }
+      ]
+    };
+
+    const formatPrice = (n) => (Math.round(n * 100) / 100).toString().replace('.', ',');
+
+    const esc = (s) => {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    };
+
+    /* ============================================================
+       SPEISEKARTE (aus Daten gerendert)
+       ============================================================ */
+    const tagHtml = (tags) => (tags || []).map(([cls, label]) => `<span class="menu-card-tag ${cls}">${esc(label)}</span>`).join('');
+
+    const menuCardHtml = (item, sign) => {
+      const tags = item.tags && item.tags.length ? `<div class="menu-card-tags">${tagHtml(item.tags)}</div>` : '';
+      const shape = item.shape ? `<p class="menu-card-shape">${esc(item.shape)}</p>` : '';
+      return `
+        <div class="menu-card fade-in">
+          <div class="menu-card-header">
+            <h3>${esc(item.title)}</h3>
+            <span class="menu-card-price">${sign}&euro;${item.price}</span>
+          </div>
+          <p class="menu-card-desc">${esc(item.desc)}</p>
+          ${shape}
+          ${tags}
+        </div>`;
+    };
+
+    const renderMenu = () => {
+      document.getElementById('menuGrid-pasta').innerHTML = MENU.pasta.map(i => menuCardHtml(i, '')).join('');
+      document.getElementById('menuGrid-toppings').innerHTML = MENU.toppings.map(i => menuCardHtml(i, '+')).join('');
+      document.getElementById('menuGrid-insalate').innerHTML = MENU.insalate.map(i => menuCardHtml(i, '')).join('');
+      document.getElementById('menuGrid-getraenke').innerHTML = MENU.getraenke.map(i => menuCardHtml(i, '')).join('');
+    };
+
+    /* ============================================================
+       BUILD-YOUR-BOWL KONFIGURATOR
+       ============================================================ */
+    const build = { shape: 'Spaghetti', sauce: MENU.pasta[0].title, toppings: [] };
+
+    const configPriceEl = document.getElementById('configPrice');
+    const addBtn = document.getElementById('addToCart');
+
+    const configPrice = () => {
+      const sauce = MENU.pasta.find(s => s.title === build.sauce);
+      const toppingsSum = MENU.toppings.filter(t => build.toppings.includes(t.title)).reduce((a, t) => a + t.price, 0);
+      return sauce ? sauce.price + toppingsSum : toppingsSum;
+    };
+
+    const renderConfigPrice = () => {
+      configPriceEl.innerHTML = `&euro;${formatPrice(configPrice())}`;
+    };
+
+    // Schritt 1: Pasta-Form
+    const shapeOptions = document.getElementById('shapeOptions');
+    const shapeBtns = shapeOptions.querySelectorAll('.choice-card');
+    shapeBtns[0].classList.add('selected');
+    shapeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        shapeBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        build.shape = btn.dataset.shape;
       });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
     });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    // Schritt 2: Sauce
+    const sauceOptions = document.getElementById('sauceOptions');
+    sauceOptions.innerHTML = MENU.pasta.map((s, i) => `
+      <button type="button" class="choice-card sauces-card${i === 0 ? ' selected' : ''}" data-sauce="${esc(s.title)}">
+        <span class="choice-title">${esc(s.title)}</span>
+        <span class="choice-desc">${esc(s.desc)}</span>
+        <span class="chip-price">&euro;${s.price}</span>
+      </button>`).join('');
+
+    sauceOptions.querySelectorAll('.choice-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        sauceOptions.querySelectorAll('.choice-card').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        build.sauce = btn.dataset.sauce;
+        renderConfigPrice();
+      });
+    });
+
+    // Schritt 3: Toppings (mehrfach wählbar)
+    const toppingOptions = document.getElementById('toppingOptions');
+    toppingOptions.innerHTML = MENU.toppings.map(t => `
+      <button type="button" class="choice-card" data-topping="${esc(t.title)}">
+        <span class="choice-title">${esc(t.title)}</span>
+        <span class="chip-price">+&euro;${t.price}</span>
+      </button>`).join('');
+
+    toppingOptions.querySelectorAll('.choice-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.topping;
+        const idx = build.toppings.indexOf(name);
+        if (idx > -1) {
+          build.toppings.splice(idx, 1);
+          btn.classList.remove('selected');
+        } else {
+          build.toppings.push(name);
+          btn.classList.add('selected');
+        }
+        renderConfigPrice();
+      });
+    });
+
+    renderConfigPrice();
+
+    /* ============================================================
+       WARENKORB
+       ============================================================ */
+    let cart = loadCart();
+    function loadCart() {
+      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+      catch (e) { return []; }
+    }
+    function saveCart() {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      renderCart();
+    }
+    const totalCart = () => cart.reduce((a, it) => a + it.qty * it.price, 0);
+    const countCart = () => cart.reduce((a, it) => a + it.qty, 0);
+
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const openCart = () => {
+      cartDrawer.classList.add('open');
+      cartOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeCart = () => {
+      cartDrawer.classList.remove('open');
+      cartOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    document.getElementById('cartFab').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    function renderCart() {
+      const count = countCart();
+      const fabCount = document.getElementById('cartCountFab');
+      fabCount.textContent = count;
+      fabCount.style.display = count ? 'flex' : 'none';
+
+      const itemsEl = document.getElementById('cartItems');
+      if (!cart.length) {
+        itemsEl.innerHTML = '<p class="cart-empty">Dein Warenkorb ist noch leer.<br>Baue oben deinen Teller zusammen.</p>';
+      } else {
+        itemsEl.innerHTML = cart.map((it, i) => `
+          <div class="cart-item">
+            <div class="cart-item-top">
+              <div>
+                <div class="cart-item-title">${it.qty}x ${esc(it.shape)} ${esc(it.sauce)}</div>
+                <div class="cart-item-details">${it.toppings.length ? esc(it.toppings.join(' + ')) : 'ohne Toppings'}</div>
+              </div>
+              <span class="cart-item-price">&euro;${formatPrice(it.qty * it.price)}</span>
+            </div>
+            <div class="cart-item-controls">
+              <button type="button" class="qty-btn" data-idx="${i}" data-act="dec" aria-label="Menge verringern">&minus;</button>
+              <span class="qty">${it.qty}</span>
+              <button type="button" class="qty-btn" data-idx="${i}" data-act="inc" aria-label="Menge erhöhen">+</button>
+              <button type="button" class="cart-item-remove" data-idx="${i}" data-act="remove">entfernen</button>
+            </div>
+          </div>`).join('');
+      }
+      document.getElementById('cartTotal').innerHTML = `&euro;${formatPrice(totalCart())}`;
+    }
+
+    document.getElementById('cartItems').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-act]');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.idx, 10);
+      const act = btn.dataset.act;
+      if (act === 'inc') cart[idx].qty += 1;
+      if (act === 'dec') {
+        cart[idx].qty -= 1;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      }
+      if (act === 'remove') cart.splice(idx, 1);
+      saveCart();
+    });
+
+    function addToCart() {
+      const price = configPrice();
+      const sig = [build.shape, build.sauce, [...build.toppings].sort().join(',')].join('|');
+      const idx = cart.findIndex(it => it.sig === sig);
+      if (idx > -1) cart[idx].qty += 1;
+      else cart.push({ sig, shape: build.shape, sauce: build.sauce, toppings: [...build.toppings], price, qty: 1 });
+      saveCart();
+      openCart();
+      addBtn.textContent = 'Hinzugefügt!';
+      setTimeout(() => { addBtn.textContent = 'In den Warenkorb'; }, 1200);
+    }
+    addBtn.addEventListener('click', addToCart);
+
+    // ---- WhatsApp Checkout ----
+    document.getElementById('checkoutWhatsApp').addEventListener('click', () => {
+      if (!cart.length) return;
+      const lines = cart.map(it => {
+        const tops = it.toppings.length ? '\n    + ' + it.toppings.join('\n    + ') : '';
+        return it.qty + 'x ' + it.shape + ' ' + it.sauce + tops;
+      });
+      const msg = 'Hallo Viva la Pasta!\n' +
+        'Ich möchte online bestellen:\n\n' +
+        lines.join('\n') + '\n\n' +
+        'Gesamt: ' + formatPrice(totalCart()) + ' €\n\n' +
+        'Name:\nAbholzeit / Adresse:\n\n' +
+        'Vielen Dank!';
+      window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    // ---- Initial renders ----
+    renderMenu();
+    renderCart();
+    observeFadeIns();
+
+    /* ============================================================
+       GALERIE LIGHTBOX
+       ============================================================ */
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let lbIndex = 0;
+
+    const showLb = (i) => {
+      lbIndex = i;
+      lbImg.src = galleryItems[lbIndex].querySelector('img').src;
+      lbImg.alt = galleryItems[lbIndex].querySelector('img').alt || 'Galeriebild';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const hideLb = () => {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    const stepLb = (d) => showLb((lbIndex + d + galleryItems.length) % galleryItems.length);
+
+    galleryItems.forEach((it, i) => it.addEventListener('click', () => showLb(i)));
+    document.getElementById('lbClose').addEventListener('click', hideLb);
+    document.getElementById('lbPrev').addEventListener('click', () => stepLb(-1));
+    document.getElementById('lbNext').addEventListener('click', () => stepLb(1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) hideLb(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') hideLb();
+      if (e.key === 'ArrowLeft') stepLb(-1);
+      if (e.key === 'ArrowRight') stepLb(1);
+    });
+
+    /* ============================================================
+       COOKIE-CONSENT
+       ============================================================ */
+    const cookieBanner = document.getElementById('cookieBanner');
+    const hideCookie = () => cookieBanner.classList.remove('show');
+
+    if (!localStorage.getItem(COOKIE_KEY)) {
+      setTimeout(() => cookieBanner.classList.add('show'), 900);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'all');
+      hideCookie();
+    });
+    document.getElementById('cookieEssential').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'essential');
+      hideCookie();
+    });
+
+    /* ============================================================
+       GEÖFFNET / GESCHLOSSEN
+       ============================================================ */
+    const openStateEl = document.getElementById('openState');
+    const updateOpenState = () => {
+      if (!openStateEl) return;
+      const now = new Date();
+      const hours = now.getHours() + now.getMinutes() / 60;
+      const isOpen = hours >= 12 && hours < 22;
+      openStateEl.classList.toggle('open', isOpen);
+      openStateEl.classList.toggle('closed', !isOpen);
+      openStateEl.querySelector('.status-text').textContent =
+        isOpen ? 'Jetzt geöffnet · bis 22:00' : 'Jetzt geschlossen · ab 12:00';
+    };
+    updateOpenState();
+    setInterval(updateOpenState, 60000);
 
     // ---- Contact Form ----
     const form = document.getElementById('contactForm');
