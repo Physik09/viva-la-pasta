@@ -253,17 +253,55 @@
     .navbar.scrolled .nav-links a::after { background: var(--burgundy); }
 
     .nav-cta {
-      background: var(--burgundy) !important;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%) !important;
       color: var(--white) !important;
-      padding: 10px 24px;
+      padding: 7px 18px;
       border-radius: 50px;
-      font-weight: 500;
-      transition: background var(--transition), transform var(--transition) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 16px rgba(122, 31, 43, 0.35);
+      transition: transform var(--transition), box-shadow var(--transition),
+                  background var(--transition), border-color var(--transition) !important;
+    }
+
+    .nav-cta .nav-cta-icon {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+    }
+
+    .nav-cta .nav-cta-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .nav-cta .nav-cta-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-cta .nav-cta-discount {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
     .nav-cta:hover {
-      background: var(--burgundy-light) !important;
-      transform: translateY(-1px);
+      background: linear-gradient(135deg, var(--burgundy-light) 0%, var(--burgundy) 100%) !important;
+      transform: translateY(-1px) scale(1.04);
+      border-color: rgba(37, 211, 102, 0.5);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35), 0 4px 16px rgba(122, 31, 43, 0.4);
+    }
+
+    .nav-cta:active {
+      transform: translateY(0) scale(0.98);
     }
 
     .nav-cta::after { display: none !important; }
@@ -412,6 +450,43 @@
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.55);
       transform: translateY(-2px);
+    }
+
+    .hero-wa {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .hero-wa-icon {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+    }
+
+    .hero-wa-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .hero-wa-text .hero-wa-label {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .hero-wa-text .hero-wa-discount {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-buttons .hero-wa {
+      text-align: left;
     }
 
     .hero-buttons {
@@ -1555,6 +1630,7 @@
       .nav-links.open { right: 0; }
       .nav-links a { color: var(--warm-dark) !important; font-size: 1rem; }
       .nav-cta { margin-top: 12px; }
+      .nav-links a.nav-cta { color: var(--white) !important; }
       .hamburger { display: flex; }
 
       .mobile-overlay {
@@ -1681,7 +1757,17 @@
         <li><a href="#build-bowl">Konfigurator</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#standort">Standort</a></li>
-        <li><a href="#kontakt" class="nav-cta">Jetzt bestellen</a></li>
+        <li>
+          <a href="https://wa.me/4917670647264?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20%C3%BCber%20WhatsApp%20bestellen%21%20%F0%9F%8D%9D" target="_blank" rel="noopener" class="nav-cta" aria-label="Jetzt bestellen über WhatsApp">
+            <svg class="nav-cta-icon" viewBox="0 0 24 24" width="20" height="20" fill="#25D366" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-8.6 15L2 21.9 5.9 20.5A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.1.5.2.6.4.1.2.1.7-.1 1.1z"/>
+            </svg>
+            <span class="nav-cta-text">
+              <span class="nav-cta-label">Jetzt bestellen</span>
+              <span class="nav-cta-discount" aria-hidden="true">–10% via WhatsApp</span>
+            </span>
+          </a>
+        </li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span>
@@ -1707,7 +1793,15 @@
           schnell und frisch, genau wie du es brauchst.
         </p>
         <div class="hero-buttons">
-          <a href="#kontakt" class="btn-primary">Jetzt bestellen</a>
+          <a href="https://wa.me/4917670647264?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20%C3%BCber%20WhatsApp%20bestellen%21%20%F0%9F%8D%9D" target="_blank" rel="noopener" class="btn-primary hero-wa" aria-label="Jetzt bestellen über WhatsApp">
+            <svg class="hero-wa-icon" viewBox="0 0 24 24" width="24" height="24" fill="#25D366" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-8.6 15L2 21.9 5.9 20.5A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.1.5.2.6.4.1.2.1.7-.1 1.1z"/>
+            </svg>
+            <span class="hero-wa-text">
+              <span class="hero-wa-label">Jetzt bestellen</span>
+              <span class="hero-wa-discount" aria-hidden="true">–10% via WhatsApp</span>
+            </span>
+          </a>
           <a href="#speisekarte" class="btn-secondary">Speisekarte ansehen</a>
         </div>
       </div>
@@ -2140,12 +2234,28 @@
       </div>
 
       <div class="legal-block">
-        <h3>4. Kontaktformular</h3>
+        <h3>4. Externe Dienste &amp; deine Bestellung</h3>
+        <p><strong>Bestellung per WhatsApp:</strong></p>
         <p>
-          Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem
-          Formular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der
-          Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir
-          nicht ohne deine Einwilligung weiter.
+          Bestellungen erfolgen telefonisch oder über den Messaging-Dienst WhatsApp. Wenn du über
+          WhatsApp bestellst, werden die von dir übermittelten Daten (z.&nbsp;B. Name und
+          Bestellinhalt) an WhatsApp bzw. die WhatsApp Ireland Limited (Meta) übertragen und dort
+          entsprechend der Datenschutzrichtlinien von WhatsApp verarbeitet.
+        </p>
+        <p><strong>Google Fonts:</strong></p>
+        <p>
+          Diese Website lädt Schriftarten von den Google Fonts-Servern. Dabei wird deine IP-Adresse
+          an Google übertragen, um die Schriftart anzuzeigen.
+        </p>
+        <p><strong>Google Maps:</strong></p>
+        <p>
+          Zur Anzeige unseres Standorts ist eine Google-Maps-Karte eingebunden. Beim Laden der Karte
+          wird deine IP-Adresse an Google übertragen.
+        </p>
+        <p><strong>Warenkorb (Local Storage):</strong></p>
+        <p>
+          Dein Warenkorb wird ausschließlich lokal in deinem Browser (Local Storage) gespeichert und
+          nicht an uns oder Dritte übertragen.
         </p>
       </div>
 
@@ -2371,14 +2481,19 @@
 
     const MENU = {
       pasta: [
-        { title: 'Bolognese', price: 12, desc: 'Klassisches Hackfleischragout, langsam geschmort mit Tomaten und Gemüse.', shape: 'mit Tagliatelle', tags: [['signature', 'Signature']] },
-        { title: 'Arrabbiata', price: 9, desc: 'Scharfe Tomatensauce mit Chili und Knoblauch — für alle, die es pikant mögen.', shape: 'mit Penne', tags: [['spicy', 'Scharf']] },
-        { title: 'Aglio e Olio', price: 9, desc: 'Knoblauch und Olivenöl — simpel, perfekt, ein Klassiker aus Neapel.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
-        { title: 'Alfredo', price: 9.5, desc: 'Cremige Käsesauce mit Parmesan und Butter — urig und Seele wärmend.', shape: 'mit Fettuccine', tags: [['vegetarian', 'Vegetarisch']] },
-        { title: 'Pomodoro', price: 9.5, desc: 'Klassische Tomatensauce mit frischem Basilikum — die Essenz Italiens.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
-        { title: 'Tonno', price: 12.5, desc: 'Thunfischsauce mit Kapern und Zwiebeln — mediterran und voll im Geschmack.', shape: 'mit Spaghetti', tags: [] },
-        { title: 'Quattro Formaggi', price: 13.5, desc: 'Vier Käsesorte — Gorgonzola, Parmesan, Mozzarella und Pecorino in cremiger Sauce.', shape: 'mit Rigatoni oder Fusilli', tags: [['signature', 'Signature'], ['vegetarian', 'Vegetarisch']] },
-        { title: 'Pilz & Brokkoli', price: 11.5, desc: 'Cremige Pilz-Brokkoli-Sauce — herb, erdig und überraschend vielseitig.', shape: 'mit Fusilli', tags: [['vegetarian', 'Vegetarisch']] }
+        { title: 'Bolognese', price: 11, desc: 'Klassisches Hackfleischragout, langsam geschmort mit Tomaten und Gemüse.', shape: 'mit Tagliatelle', tags: [['signature', 'Signature']] },
+        { title: 'Arrabbiata', price: 8, desc: 'Scharfe Tomatensauce mit Chili und Knoblauch — für alle, die es pikant mögen.', shape: 'mit Penne', tags: [['spicy', 'Scharf']] },
+        { title: 'Aglio e Olio', price: 8, desc: 'Knoblauch und Olivenöl — simpel, perfekt, ein Klassiker aus Neapel.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Alfredo', price: 8, desc: 'Cremige Käsesauce mit Parmesan und Butter — urig und Seele wärmend.', shape: 'mit Fettuccine', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Pomodoro', price: 8, desc: 'Klassische Tomatensauce mit frischem Basilikum — die Essenz Italiens.', shape: 'mit Spaghetti', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Tonno', price: 11, desc: 'Thunfischsauce mit Kapern und Zwiebeln — mediterran und voll im Geschmack.', shape: 'mit Spaghetti', tags: [] },
+        { title: 'Quattro Formaggi', price: 12, desc: 'Vier Käsesorte — Gorgonzola, Parmesan, Mozzarella und Pecorino in cremiger Sauce.', shape: 'mit Rigatoni oder Fusilli', tags: [['signature', 'Signature'], ['vegetarian', 'Vegetarisch']] },
+        { title: 'Pilz & Brokkoli', price: 10, desc: 'Cremige Pilz-Brokkoli-Sauce — herb, erdig und überraschend vielseitig.', shape: 'mit Fusilli', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Bunte Gemüsepasta', price: 11.5, desc: 'Zucchini, Paprika, Aubergine, Zwiebeln, Knoblauch, Tomatensauce, Olivenöl, italienische Kräuter, Salz und Pfeffer', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Cremige Hähnchenpasta / Pollo Cremoso', price: 14, desc: 'Pasta, Hühnerfleisch, Zucchini, Champignons, Zwiebeln, Knoblauch, Sahnesauce, Parmesan, Olivenöl, italienische Kräuter', tags: [] },
+        { title: 'Spaghetti Gamberi', price: 14, desc: 'Gebratene Garnelen mit Knoblauch in einer cremigen Butter-Sahne-Tomatensoße, verfeinert mit Parmesan, frischer Petersilie und italienischen Kräutern', tags: [] },
+        { title: 'Pasta Alpesto', price: 9, desc: 'Pesto, Knoblauch, Parmesan, Olivenöl, Salz und Pfeffer', tags: [['vegetarian', 'Vegetarisch']] },
+        { title: 'Cremige Cheddar-Sahnesauce', price: 11, desc: 'Cremige Sahnesauce mit würzigem Cheddar und feinem Parmesan, verfeinert mit Butter und milden Gewürzen', tags: [['vegetarian', 'Vegetarisch']] }
       ],
       toppings: [
         { title: 'Parmesan', price: 1, desc: 'Frisch geriebener Parmigiano Reggiano — das i-Tüpfelchen.', tags: [] },

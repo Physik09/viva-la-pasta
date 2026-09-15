@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viva la Pasta — Frisch. Schnell. Lecker.</title>
+  <meta name="description" content="Viva la Pasta — Frische Pasta to-go in Aachen. Jetz bestellen, Speisekarte ansehen, Standort finden.">
+  <meta name="theme-color" content="#7A1F2B">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Viva la Pasta — Frisch. Schnell. Lecker.">
+  <meta property="og:description" content="Frische Pasta to-go in Aachen. Direkt bestellen über WhatsApp.">
+  <meta property="og:image" content="https://www.vivalapasta.de/images/gallery-1.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1F2B'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23C9A96E' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --burgundy: #7A1F2B;
+      --burgundy-light: #9A3544;
+      --burgundy-dark: #5E1720;
+      --burgundy-deep: #3E1019;
+      --gold: #C9A96E;
+      --gold-light: #D4BC8A;
+      --gold-dark: #B89555;
+      --cream: #FAF6F0;
+      --warm-dark: #2C2420;
+      --warm-mid: #5C4D44;
+      --white: #FFFFFF;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--white);
+      background: linear-gradient(165deg, var(--warm-dark) 0%, var(--burgundy-deep) 35%, var(--burgundy-dark) 65%, var(--burgundy) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 32px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* subtle grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    .page { position: relative; z-index: 1; width: 100%; max-width: 420px; }
+
+    /* ============================================================
+       LOGO / BRAND
+       ============================================================ */
+    .brand {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .brand-logo {
+      width: min(220px, 72vw);
+      height: auto;
+      margin: 0 auto 0;
+      display: block;
+    }
+
+    /* fallback wordmark if SVG logo image missing */
+    .brand-wordmark {
+      font-family: 'Parisienne', 'Brush Script MT', cursive;
+      font-size: clamp(2.4rem, 10vw, 3.2rem);
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .brand-ribbon {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--warm-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .brand-tagline {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      opacity: 0.85;
+    }
+
+    /* ============================================================
+       BUTTONS
+       ============================================================ */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .link-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+      transition: transform var(--transition), box-shadow var(--transition),
+                  background var(--transition), border-color var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideIn 0.6s ease forwards;
+    }
+
+    .link-btn:nth-child(1) { animation-delay: 0.1s; }
+    .link-btn:nth-child(2) { animation-delay: 0.2s; }
+    .link-btn:nth-child(3) { animation-delay: 0.3s; }
+    .link-btn:nth-child(4) { animation-delay: 0.4s; }
+    .link-btn:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeSlideIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .link-btn:hover,
+    .link-btn:active {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .link-btn:active {
+      transform: translateY(0) scale(0.98);
+      transition-duration: 0.1s;
+    }
+
+    .link-btn .btn-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .link-btn .btn-label { flex: 1; }
+
+    .link-btn .btn-arrow {
+      width: 16px;
+      height: 16px;
+      opacity: 0.4;
+      flex-shrink: 0;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .link-btn:hover .btn-arrow {
+      opacity: 0.7;
+      transform: translateX(2px);
+    }
+
+    /* ---- Primary (WhatsApp) ---- */
+    .link-btn.primary {
+      background: linear-gradient(135deg, var(--burgundy-light) 0%, var(--burgundy) 100%);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 4px 24px rgba(122, 31, 43, 0.4);
+      padding: 18px 20px;
+      font-size: 1rem;
+    }
+
+    .link-btn.primary:hover,
+    .link-btn.primary:active {
+      box-shadow: 0 8px 36px rgba(37, 211, 102, 0.3), 0 4px 24px rgba(122, 31, 43, 0.4);
+      border-color: rgba(37, 211, 102, 0.45);
+    }
+
+    .link-btn.primary .btn-label-text {
+      display: block;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .link-btn.primary .btn-discount {
+      display: block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    /* ---- Social accent colors ---- */
+    .link-btn.instagram:hover { border-color: rgba(225, 48, 108, 0.5); }
+    .link-btn.tiktok:hover { border-color: rgba(254, 44, 85, 0.4); }
+    .link-btn.location:hover { border-color: rgba(66, 133, 244, 0.4); }
+    .link-btn.website:hover { border-color: var(--gold); }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      margin-top: auto;
+      padding-top: 56px;
+      text-align: center;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(201, 169, 110, 0.3);
+      margin: 0 auto 20px;
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.7;
+    }
+
+    .footer .footer-address {
+      margin-bottom: 6px;
+    }
+
+    .footer .footer-tagline {
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(201, 169, 110, 0.45);
+      font-size: 0.65rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- ==================== BRAND ==================== -->
+  <div class="brand">
+    <img
+      class="brand-logo"
+      src="images/viva-la-pasta-logo-transparent.png"
+      alt="Viva la Pasta"
+      width="300"
+      height="auto"
+    >
+  </div>
+
+  <!-- ==================== LINK BUTTONS ==================== -->
+  <div class="links">
+
+    <!-- WhatsApp Order (primary) -->
+    <a href="https://wa.me/4917670647264?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20%C3%BCber%20WhatsApp%20bestellen%21%20%F0%9F%8D%9D" target="_blank" rel="noopener" class="link-btn primary">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15L2 21.9 5.9 20.5A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.1.5.2.6.4.1.2.1.7-.1 1.1z"/>
+      </svg>
+      <span class="btn-label">
+        <span class="btn-label-text">Jetzt bestellen</span>
+        <span class="btn-discount">–10% via WhatsApp</span>
+      </span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <!-- Speisekarte / Website -->
+    <a href="index.html" class="link-btn website">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
+      </svg>
+      <span class="btn-label">Zur Speisekarte / Website</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/acvivalapasta" target="_blank" rel="noopener" class="link-btn instagram">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      <span class="btn-label">Instagram</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <!-- Standort / Anfahrt -->
+    <a href="https://www.google.com/maps?q=Bahnhofstra%C3%9Fe+9,+52064+Aachen,+Germany" target="_blank" rel="noopener" class="link-btn location">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span class="btn-label">Standort / Anfahrt</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@pastatogoac" target="_blank" rel="noopener" class="link-btn tiktok">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.16a8.16 8.16 0 0 0 3.76.92V6.69z"/>
+      </svg>
+      <span class="btn-label">TikTok</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    <div class="footer-divider"></div>
+    <p class="footer-address">Bahnhofstraße 9 · 52064 Aachen</p>
+    <p class="footer-tagline">Frisch · Schnell · Lecker</p>
+  </div>
+
+</div>
+
+</body>
+</html>
