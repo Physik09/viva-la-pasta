@@ -214,12 +214,18 @@
       overflow: hidden;
     }
 
-    .hero-logo-img {
-      display: block;
+    .hero-logo {
+      position: relative;
       width: min(300px, 80vw);
-      height: auto;
       margin: 0 auto;
     }
+
+    .hero-logo-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
 
     .nav-links {
       display: flex;
@@ -1699,49 +1705,6 @@
 
 <body>
 
-  <!-- ==================== BRAND LOGO (SVG symbol) ==================== -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="svg-defs" aria-hidden="true">
-    <symbol id="brand-logo" viewBox="0 0 600 292">
-      <!-- Chef hat: small line-art outline, cream stroke -->
-      <g transform="translate(300 40)" stroke="#FAF6ED" fill="none" stroke-linecap="round" stroke-width="3">
-        <path d="M-70 0 A70 34 0 0 1 70 0"/>
-        <path d="M-36 -22 v-8 M0 -28 v-8 M36 -22 v-8" stroke-width="2.5"/>
-        <rect x="-82" y="2" width="164" height="13" rx="4"/>
-      </g>
-
-      <!-- Wordmark: large script, cream -->
-      <text x="300" y="152" text-anchor="middle"
-            font-family="Parisienne, 'Brush Script MT', cursive"
-            font-size="108" fill="#FAF6ED">Viva la Pasta</text>
-
-      <!-- Ribbon: soft cream banner with pointed ends + folded tails -->
-      <path d="M170 176 L450 176 L438 196 L450 216 L170 216 L182 196 Z" fill="#F0E2BE"/>
-      <path d="M170 176 L130 180 L122 196 L130 212 L170 216 Z" fill="#F0E2BE"/>
-      <path d="M450 176 L490 180 L498 196 L490 212 L450 216 Z" fill="#F0E2BE"/>
-
-      <!-- PASTA TO GO: spaced caps with hearts inside ribbon -->
-      <text x="310" y="201" text-anchor="middle"
-            font-family="Inter, -apple-system, sans-serif"
-            font-size="19" font-weight="600" letter-spacing="3" fill="#FAF6ED"
-            textLength="250" lengthAdjust="spacing">♥ PASTA TO GO ♥</text>
-
-      <!-- Tagline: small spaced caps, matches ribbon body width -->
-      <text x="300" y="244" text-anchor="middle"
-            font-family="Inter, -apple-system, sans-serif"
-            font-size="16" font-weight="600" letter-spacing="5" fill="#FAF6ED"
-            textLength="300" lengthAdjust="spacing">FRISCH · SCHNELL · LECKER</text>
-
-      <!-- Decorative lines + small heart underneath -->
-      <g stroke="#FAF6ED" stroke-width="2" stroke-linecap="round" fill="none">
-        <path d="M185 262 H245"/>
-        <path d="M355 262 H415"/>
-      </g>
-      <path transform="translate(300 262) scale(0.35) translate(-12 -12)"
-            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-            fill="#FAF6ED"/>
-    </symbol>
-  </svg>
-
   <!-- ==================== MOBILE OVERLAY ==================== -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
@@ -1752,8 +1715,7 @@
         <img class="nav-logo-img" src="images/viva-la-pasta-logo-transparent.png" alt="Viva la Pasta">
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#konzept">Konzept</a></li>
-        <li><a href="#speisekarte">Speisekarte</a></li>
+<li><a href="#konzept">Konzept</a></li>
         <li><a href="#build-bowl">Konfigurator</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#standort">Standort</a></li>
@@ -1786,7 +1748,7 @@
       <div class="hero-content fade-in">
         <div class="hero-badge">Aachen &middot; Frisch gekocht &middot; Täglich frisch</div>
         <h1 class="hero-logo">
-          <img class="hero-logo-img" src="images/viva-la-pasta-logo-transparent.png" alt="Viva la Pasta — Frisch. Schnell. Lecker.">
+<img class="hero-logo-img" src="images/viva-la-pasta-logo-gggg.png" alt="Viva la Pasta — Frisch. Schnell. Lecker.">
         </h1>
         <p class="hero-sub">
           Frisch gekochte Pasta, regionale Zutaten und jede Menge Leidenschaft —
@@ -1801,8 +1763,7 @@
               <span class="hero-wa-label">Jetzt bestellen</span>
               <span class="hero-wa-discount" aria-hidden="true">–10% via WhatsApp</span>
             </span>
-          </a>
-          <a href="#speisekarte" class="btn-secondary">Speisekarte ansehen</a>
+</a>
         </div>
       </div>
       <div class="scroll-indicator">
@@ -1932,56 +1893,7 @@
       </div>
     </section>
 
-    <!-- ==================== MENU (Speisekarte) ==================== -->
-    <section class="menu" id="speisekarte">
-      <div class="container">
-        <div class="menu-header fade-in">
-          <span class="section-label">Speisekarte</span>
-          <h2 class="section-title">Auf den Punkt gebracht</h2>
-          <p class="section-subtitle">
-            Frische Pasta, charmante Saucen und die besten Toppings — schnell gemacht, mit Liebe genossen.
-          </p>
-        </div>
-
-        <div class="menu-tabs fade-in" role="tablist" aria-label="Speisekarte Kategorien">
-          <button class="menu-tab active" data-tab="pasta" role="tab" aria-selected="true">Pasta</button>
-          <button class="menu-tab" data-tab="toppings" role="tab" aria-selected="false">Toppings</button>
-          <button class="menu-tab" data-tab="insalate" role="tab" aria-selected="false">Insalate</button>
-          <button class="menu-tab" data-tab="getraenke" role="tab" aria-selected="false">Getränke</button>
-        </div>
-
-        <!-- ==================== PASTA ==================== -->
-        <div class="menu-panel active" id="panel-pasta" role="tabpanel">
-          <div class="menu-grid" id="menuGrid-pasta"></div>
-        </div>
-
-        <!-- ==================== TOPPINGS ==================== -->
-        <div class="menu-panel" id="panel-toppings" role="tabpanel">
-          <div class="menu-grid" id="menuGrid-toppings"></div>
-        </div>
-
-        <!-- ==================== INSALATE ==================== -->
-        <div class="menu-panel" id="panel-insalate" role="tabpanel">
-          <div class="menu-grid" id="menuGrid-insalate"></div>
-        </div>
-
-        <!-- ==================== GETRÄNKE ==================== -->
-        <div class="menu-panel" id="panel-getraenke" role="tabpanel">
-          <div class="menu-grid" id="menuGrid-getraenke"></div>
-        </div>
-
-        <!-- Allergen Footnote -->
-        <div class="allergen-note fade-in">
-          <p>
-            <strong>Hinweis zu Allergenen:</strong> Alle unsere Gerichte können Spuren von Nüssen, Gluten, Milch, Eiern, Soja und Sellerie enthalten.
-            Bitte informiere dich vor Ort über die vollständige Zutatenliste oder sprich unser Personal an.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== GALLERY ==================== -->
+<!-- ==================== GALLERY ==================== -->
     <section class="gallery" id="galerie">
       <div class="container">
         <div class="gallery-header fade-in">
@@ -2308,8 +2220,7 @@
 
         <div class="footer-col">
           <h4>Links</h4>
-          <a href="#konzept">Konzept</a>
-          <a href="#speisekarte">Speisekarte</a>
+<a href="#konzept">Konzept</a>
           <a href="#galerie">Galerie</a>
           <a href="#standort">Standort</a>
           <a href="#kontakt">Bestellen</a>
@@ -2447,32 +2358,7 @@
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     };
 
-    // ---- Menu Tabs ----
-    const tabs = document.querySelectorAll('.menu-tab');
-    const panels = document.querySelectorAll('.menu-panel');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        panels.forEach(p => p.classList.remove('active'));
-
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-
-        // Re-trigger fade-in for newly visible cards
-        document.querySelectorAll('.menu-panel.active .fade-in').forEach(el => {
-          el.classList.remove('visible');
-          void el.offsetWidth;
-          observer.observe(el);
-        });
-      });
-    });
-
-    /* ============================================================
+/* ============================================================
        KONSTANTEN & MENÜ-DATEN
        ============================================================ */
     const WHATSAPP_NUMBER = '4917670647264';
@@ -2531,34 +2417,7 @@
       return d.innerHTML;
     };
 
-    /* ============================================================
-       SPEISEKARTE (aus Daten gerendert)
-       ============================================================ */
-    const tagHtml = (tags) => (tags || []).map(([cls, label]) => `<span class="menu-card-tag ${cls}">${esc(label)}</span>`).join('');
-
-    const menuCardHtml = (item, sign) => {
-      const tags = item.tags && item.tags.length ? `<div class="menu-card-tags">${tagHtml(item.tags)}</div>` : '';
-      const shape = item.shape ? `<p class="menu-card-shape">${esc(item.shape)}</p>` : '';
-      return `
-        <div class="menu-card fade-in">
-          <div class="menu-card-header">
-            <h3>${esc(item.title)}</h3>
-            <span class="menu-card-price">${sign}&euro;${formatPrice(item.price)}</span>
-          </div>
-          <p class="menu-card-desc">${esc(item.desc)}</p>
-          ${shape}
-          ${tags}
-        </div>`;
-    };
-
-    const renderMenu = () => {
-      document.getElementById('menuGrid-pasta').innerHTML = MENU.pasta.map(i => menuCardHtml(i, '')).join('');
-      document.getElementById('menuGrid-toppings').innerHTML = MENU.toppings.map(i => menuCardHtml(i, '+')).join('');
-      document.getElementById('menuGrid-insalate').innerHTML = MENU.insalate.map(i => menuCardHtml(i, '')).join('');
-      document.getElementById('menuGrid-getraenke').innerHTML = MENU.getraenke.map(i => menuCardHtml(i, '')).join('');
-    };
-
-    /* ============================================================
+/* ============================================================
        BUILD-YOUR-BOWL KONFIGURATOR
        ============================================================ */
     const build = { shape: 'Spaghetti', sauce: MENU.pasta[0].title, toppings: [] };
@@ -2736,8 +2595,7 @@
       window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
 
-    // ---- Initial renders ----
-    renderMenu();
+// ---- Initial renders ----
     renderCart();
     observeFadeIns();
 
@@ -2812,3 +2670,4 @@
 
 </body>
 </html>
+
